@@ -6,11 +6,9 @@
 
 ---
 
-<br>
 - 기술 스택
   HTML / SCSS / React.JS
 
-<br>
 - 사용 라이브러리
   React.js,
   create-react-app(CRA)
@@ -18,7 +16,7 @@
   scss
   eslint
   prettier
-<br>
+
 - 조원
   최규선
   문준기
