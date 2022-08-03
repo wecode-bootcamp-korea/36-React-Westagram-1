@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import MainLee from './components/pages/Lee/Main/Main';
-import MainLim from './components/pages/Lim/Main/Main';
-import MainMun from './components/pages/Mun/Main/Main';
-import MainChoi from './components/pages/Choi/Main/Main';
-import LoginMun from './components/pages/Mun/Login/Login';
-import LoginLim from './components/pages/Lim/Login/Login';
-import LoginLee from './components/pages/Lee/Login/Login';
-import LoginChoi from './components/pages/Choi/Login/Login';
+import MainLee from './pages/Lee/Main/Main';
+import MainLim from './pages/Lim/Main/Main';
+import MainMun from './pages/Mun/Main/Main';
+import MainChoi from './pages/Choi/Main/Main';
+import LoginMun from './pages/Mun/Login/Login';
+import LoginLim from './pages/Lim/Login/Login';
+import LoginLee from './pages/Lee/Login/Login';
+import LoginChoi from './pages/Choi/Login/Login';
 
 const Router = () => {
   return (
