@@ -1,11 +1,8 @@
 import React from 'react';
+import Nav from '../../../components/Nav/Nav';
 
 const Main = () => {
-  return (
-    <div>
-      승민님
-    </div>
-  );
-}
+  return <Nav />;
+};
 
 export default Main;
