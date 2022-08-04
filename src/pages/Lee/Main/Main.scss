@@ -1,28 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import '../Common/variable.scss';
-
-@mixin flexSort($justify, $alignItems: center) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $alignItems;
-}
-
-// every texts 2
-@mixin globalTexts($size, $color, $textCenter) {
-  font-size: $size;
-  margin-left: 5px;
-  font-weight: 500;
-  color: $color;
-  text-align: $textCenter;
-}
-
-//every images 3
-@mixin globalimages($imagePh: 'auto') {
-  max-width: 100%;
-  margin-bottom: 4px;
-  height: $imagePh;
-  border-radius: 50%;
-}
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
 
 //flex box 1
 
