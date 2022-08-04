@@ -1,8 +1,7 @@
 import React from 'react';
-import Nav from '../../../components/Nav/Nav';
 
 const Main = () => {
-  return <Nav />;
+  return <div>승민님</div>;
 };
 
 export default Main;
