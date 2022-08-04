@@ -1,0 +1,105 @@
+@import '../Common/variable.scss';
+@import '../Main/main.scss';
+
+.feed {
+  border: 1px solid #dbdbdb;
+  margin-bottom: 20px;
+  border-radius: 6px;
+
+  .feeds {
+    .img__round-small {
+      @include globalimages($imagePx);
+    }
+
+    .profile__text {
+      .middleText {
+        @include globalTexts($size, black, left);
+      }
+
+      .smallText {
+        @include globalTexts($size, $color, left);
+      }
+    }
+
+    .feeds__name {
+      margin: 10px;
+      @include flexSort(flex-start);
+      @include globalTexts($size, black, left);
+      position: relative;
+
+      .img__round-small {
+        @include globalimages(30px);
+        border: 1px solid linear-gradient(45deg, yellow, red);
+      }
+
+      i {
+        position: absolute;
+      }
+    }
+  }
+
+  article {
+    img {
+      height: 400px;
+      border-radius: 2px;
+    }
+  }
+
+  .push__icon {
+    margin: 10px 0px 3px 10px;
+    position: relative;
+  }
+
+  .replSection {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    .middleText {
+      @include globalTexts($size, black, left);
+    }
+
+    .repl {
+      margin: 10px;
+      display: block;
+
+      .name {
+        font-size: small;
+        font-weight: bold;
+        margin: 0px 10px 0px 10px;
+      }
+
+      button {
+        margin-left: 2px;
+        color: #8e8e8e;
+      }
+
+      .reply {
+        color: #8e8e8e;
+      }
+    }
+  }
+
+  .feeds__input {
+    border-top: 1px solid #dbdbdb;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .button-style {
+      color: #6fbbf7;
+      width: 80px;
+    }
+
+    .feed__input {
+      background-color: white;
+      width: 100%;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+    }
+  }
+}

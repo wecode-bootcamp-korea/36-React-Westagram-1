@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+@import '../Common/variable.scss';
+
+/* basic css */
+
+.login-container {
+  position: relative;
+
+  .login {
+    width: 33vw;
+    height: 400px;
+    border: 0.5px lightgrey solid;
+    position: absolute;
+    left: 33vw;
+    top: 150px;
+
+    h1 {
+      font-family: $headFont;
+      text-align: center;
+      margin: 40px 0;
+      font-size: 2.6rem;
+    }
+
+    footer {
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      bottom: -1;
+      padding: 30px;
+    }
+  }
+
+  .sub_container {
+    width: 100%;
+
+    input {
+      width: 70%;
+      height: 35px;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      border: 0.8px lightgray solid;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 50%;
+      height: 30px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+      padding: 5px;
+      background-color: cornflowerblue;
+      border-radius: 5px;
+      color: aliceblue;
+    }
+  }
+}

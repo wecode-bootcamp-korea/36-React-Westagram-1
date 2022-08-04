@@ -1,0 +1,80 @@
+@import '../Common/variable.scss';
+@import '../Main/main.scss';
+
+.Nav {
+  width: 100vw;
+  border-bottom: 1px solid #faeaea;
+
+  .navClass {
+    @include flexSort(space-around);
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px;
+
+    .first__box {
+      @include flexSort(space-evenly);
+      position: relative;
+
+      .head {
+        font-family: $headFont;
+        font-size: large;
+
+        &::before {
+          content: '|';
+          position: absolute;
+          left: 27px;
+          bottom: 6px;
+        }
+      }
+    }
+
+    .second__box {
+      @include flexSort(left);
+      margin-left: 60px;
+      position: relative;
+      // padding-left: 100px;
+
+      input {
+        border-radius: 5px;
+        padding: 6px 30px;
+        background: none;
+        border: none;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        background-color: #efefef;
+      }
+
+      i {
+        color: gray;
+      }
+
+      .input_search {
+        position: absolute;
+        padding-left: 3px;
+        top: 6px;
+      }
+    }
+
+    .third__box {
+      @include flexSort(right);
+
+      div {
+        .dot {
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          background-color: red;
+          margin-left: 10px;
+        }
+      }
+
+      i {
+        margin-right: 30px;
+      }
+      .img__round-small {
+        @include globalimages(30px);
+      }
+    }
+  }
+}
