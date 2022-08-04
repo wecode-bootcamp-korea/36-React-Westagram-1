@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import './login.scss';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [id, setId] = useState('');
 
   const saveUserId = e => {
     setId(e.target.value);
-    console.log('id', id);
   };
 
   const saveUserPw = e => {
     setId(e.target.value);
-    console.log('pw', id);
   };
 
   const navigate = useNavigate();
@@ -45,7 +43,7 @@ const Login = () => {
           </button>
         </div>
         <footer>
-          <a href="#">비밀번호를 잊으셨나요</a>
+          <Link to="/signup-lee">비밀번호를 잊으셨나요?</Link>
         </footer>
       </div>
     </div>
