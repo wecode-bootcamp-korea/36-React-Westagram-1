@@ -70,10 +70,10 @@ const Main = () => {
         {/* 여기 원래 feed 자리  */}
         <div className="feedContainer">
           <Feed />
+          {/* <Feed />
           <Feed />
           <Feed />
-          <Feed />
-          <Feed />
+          <Feed /> */}
         </div>
 
         <div className="main-right">

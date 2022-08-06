@@ -20,3 +20,15 @@
   height: $imagePh;
   border-radius: 50%;
 }
+
+@mixin btn() {
+  width: 50%;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 5px;
+  background-color: #1c7ed6;
+  border-radius: 5px;
+  color: aliceblue;
+}
