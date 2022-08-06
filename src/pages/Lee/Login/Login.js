@@ -7,7 +7,6 @@ const Login = () => {
     user: '',
     password: '',
   });
-  console.log(id);
   const [isActive, setIsActive] = useState(false);
 
   const isPassedLogin = () => {
