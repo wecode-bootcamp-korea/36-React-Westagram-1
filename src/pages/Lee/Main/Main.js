@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Nav from '../Nav/nav';
 import Feed from '../feed/Feed';
 import './main.scss';
@@ -70,8 +69,6 @@ const Main = () => {
         </div>
 
         <div className="feedContainer">
-          <Feed />
-          <Feed />
           <Feed />
           <Feed />
           <Feed />

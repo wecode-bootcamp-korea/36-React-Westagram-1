@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Reply from '../reply/Reply';
 import './feed.scss';
 
 const Feed = () => {
@@ -18,8 +19,6 @@ const Feed = () => {
     setValue('');
   };
 
-  const here = e => {};
-
   return (
     <div className="feed">
       <div className="feeds">
@@ -37,7 +36,6 @@ const Feed = () => {
           </div>
           <i className="uil uil-ellipsis-h icon icon-absolute" />
         </div>
-
         <article>
           <img
             className="article__img"
@@ -54,7 +52,7 @@ const Feed = () => {
           <i className="uil uil-bookmark-full icon icon-absolute" />
         </div>
 
-        <ul className="replSection" onChange={here}>
+        <ul className="replSection">
           <li className="repl middleText">
             <span className="repl middleText">
               juyoung님 외 3명이 좋아합니다
@@ -66,14 +64,15 @@ const Feed = () => {
             </button>
             <span className="repl smallText reply">댓글 2개 다시보기</span>
           </li>
-          {comments.map((name, idx) => {
+          <Reply comment={comments} />
+          {/* {comments.map((name, idx) => {
             return (
               <li key={idx}>
                 <span className="name">dev_codyman0</span>
                 <span className="smallText">{name}</span>
               </li>
             );
-          })}
+          })} */}
         </ul>
 
         <form className="feeds__input">
