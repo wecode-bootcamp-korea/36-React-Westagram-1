@@ -1,6 +1,7 @@
 import React from 'react';
-import Feed from '../feed/Feed';
+
 import Nav from '../Nav/nav';
+import Feed from '../feed/Feed';
 import './main.scss';
 
 const Main = () => {
@@ -67,13 +68,13 @@ const Main = () => {
           </div>
           <div className="new-feed middleText">새 게시물</div>
         </div>
-        {/* 여기 원래 feed 자리  */}
+
         <div className="feedContainer">
           <Feed />
-          {/* <Feed />
           <Feed />
           <Feed />
-          <Feed /> */}
+          <Feed />
+          <Feed />
         </div>
 
         <div className="main-right">

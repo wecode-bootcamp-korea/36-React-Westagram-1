@@ -1,7 +1,25 @@
-import React from 'react';
-import '../feed/feed.scss';
+import React, { useState } from 'react';
+import './feed.scss';
 
 const Feed = () => {
+  const [value, setValue] = useState('');
+  const [comments, setComments] = useState([]);
+  //굳이 useState 이 필요한가?? maybe not
+
+  const changeHandler = e => {
+    setValue(e.target.value);
+  };
+
+  const registerComment = e => {
+    e.preventDefault();
+    const pot = [...comments];
+    pot.push(value);
+    setComments(pot);
+    setValue('');
+  };
+
+  const here = e => {};
+
   return (
     <div className="feed">
       <div className="feeds">
@@ -36,32 +54,43 @@ const Feed = () => {
           <i className="uil uil-bookmark-full icon icon-absolute" />
         </div>
 
-        <div className="replSection">
-          <ul>
-            <li className="repl middleText">
-              <span className="repl middleText">
-                juyoung님 외 3명이 좋아합니다
-              </span>
-              <span className="name">dev_codyman0</span>
-              <span className="smallText">안녕하세요! 댓글 기능</span>
-              <button className="smallText" type="submit">
-                ...더 보기
-              </button>
-              <span className="repl smallText reply">댓글 2개 다시보기</span>
-            </li>
-          </ul>
-        </div>
+        <ul className="replSection" onChange={here}>
+          <li className="repl middleText">
+            <span className="repl middleText">
+              juyoung님 외 3명이 좋아합니다
+            </span>
+            <span className="name">dev_codyman0</span>
+            <span className="smallText">댓글 기능을 구현해보자! </span>
+            <button className="smallText" type="submit">
+              ...더 보기
+            </button>
+            <span className="repl smallText reply">댓글 2개 다시보기</span>
+          </li>
+          {comments.map((name, idx) => {
+            return (
+              <li key={idx}>
+                <span className="name">dev_codyman0</span>
+                <span className="smallText">{name}</span>
+              </li>
+            );
+          })}
+        </ul>
 
-        <form className="feeds__input" action="#">
+        <form className="feeds__input">
           <i className="uil uil-smile icon" />
           <input
             className="feed__input"
             type="text"
             placeholder="댓글 달기..."
+            value={value}
+            onChange={changeHandler}
           />
-          <button className="button-style" type="submit">
-            게시
-          </button>
+          <input
+            className="button-style"
+            type="submit"
+            value="게시"
+            onClick={registerComment}
+          />
         </form>
       </div>
     </div>

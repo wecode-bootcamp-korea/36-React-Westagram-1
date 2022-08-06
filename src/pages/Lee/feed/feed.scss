@@ -91,6 +91,8 @@
     .button-style {
       color: #6fbbf7;
       width: 80px;
+      border: 0 solid black;
+      background-color: white;
     }
 
     .feed__input {
@@ -100,6 +102,19 @@
       font: inherit;
       cursor: pointer;
       outline: inherit;
+    }
+  }
+
+  li {
+    margin-left: 10px;
+    margin-top: 8px;
+    .name {
+      font-size: small;
+      font-weight: bold;
+      margin: 0px 10px 0px 10px;
+    }
+    .smallText {
+      font-size: small;
     }
   }
 }
