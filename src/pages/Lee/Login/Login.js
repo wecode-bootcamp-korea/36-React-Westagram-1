@@ -3,24 +3,26 @@ import './login.scss';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [id, setId] = useState('');
-  const [password, setPassword] = useState('');
+  const [id, setId] = useState({
+    user: '',
+    password: '',
+  });
+  console.log(id);
   const [isActive, setIsActive] = useState(false);
 
-  //각 인풋에 keyup이 됐고 각 id와 Password의 value를 확인하고 부합하면 true
-  //isActive의 값에 따라 className을 다르게 주면 가능
   const isPassedLogin = () => {
-    return id.includes('@') && password.length > 4
+    return id.user.includes('@') && id.password.length > 4
       ? setIsActive(true)
       : setIsActive(false);
   };
 
   const saveUserId = e => {
-    setId(e.target.value);
-  };
-
-  const saveUserPw = e => {
-    setPassword(e.target.value);
+    const value = e.target.value;
+    const ID = e.target.id;
+    setId({
+      ...id,
+      [ID]: value,
+    });
   };
 
   const navigate = useNavigate();
@@ -38,9 +40,10 @@ const Login = () => {
           <label>Email</label>
           <input
             className="inputClass"
-            value={id}
+            value={id.user}
             type="email"
             name="userEmail"
+            id="user"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             onChange={saveUserId}
             onKeyUp={isPassedLogin}
@@ -49,19 +52,21 @@ const Login = () => {
           <input
             className="inputClass"
             id="password"
-            value={password}
+            value={id.password}
             type="userPassword"
             name="userPassword"
             placeholder="비밀번호"
             required
-            onChange={saveUserPw}
+            onChange={saveUserId}
             onKeyUp={isPassedLogin}
           />
           <input
             className={isActive ? 'activeBtn' : 'unactiveBtn'}
             onClick={goToMain}
             type="submit"
-            disabled={id.includes('@') && password.length > 4 ? false : true}
+            disabled={
+              id.user.includes('@') && id.password.length > 4 ? false : true
+            }
             value="로그인"
           />
         </form>
