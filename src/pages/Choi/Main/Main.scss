@@ -1,0 +1,19 @@
+a {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  font-size: 1px;
+}
+
+@media (max-width: 780px) {
+  section {
+    display: block;
+    width: 84%;
+  }
+  .feeds {
+    width: inherit;
+  }
+  .main-right {
+    display: none;
+  }
+}

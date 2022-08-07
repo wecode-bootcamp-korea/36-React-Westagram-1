@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Nav from './Nav';
+import './Main.scss';
+import Section from './Section';
 
 const Main = () => {
   return (
-    <div>
-      Main
-    </div>
+    <>
+      <Nav />
+      <Section />
+    </>
   );
-}
+};
 
 export default Main;
