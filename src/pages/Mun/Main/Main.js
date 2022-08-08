@@ -2,9 +2,11 @@ import './Main.scss';
 import Comment from './Comment/Comment';
 import { useState } from 'react';
 
+let firstComment = ['와~ 너무 멋있어!!!!', '잘 보고 갑니다.', '뭉클해져요'];
+
 function Main() {
   const [comment, setComment] = useState('');
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState(firstComment);
 
   function commentPlus(e) {
     setComment(e.target.value);
@@ -12,7 +14,6 @@ function Main() {
 
   function isEnter(e) {
     if (e.key === 'Enter') {
-      console.log(typeof e.target.value);
       e.target.value = '';
       let tmp = [...comments];
       tmp.push(comment);
@@ -71,7 +72,7 @@ function Main() {
               <div className="commentContainer">
                 <div className="commentMore">댓글</div>
                 <div className="commentBox">
-                  <Comment id={'ddood'} contents={'와~ 너무 예쁘다!!'} />
+                  <Comment comments={comments} />
                   <div className="commentImgBox">
                     <img
                       src="./images/Mun/heart.png"

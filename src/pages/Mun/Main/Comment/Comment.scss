@@ -1,0 +1,25 @@
+.commentBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+
+  .comment {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+
+  .commentImgBox {
+    display: flex;
+    align-items: center;
+
+    .commentHeart {
+      width: 13px;
+      margin-right: 13px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
