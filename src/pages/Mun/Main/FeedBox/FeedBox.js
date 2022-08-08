@@ -7,22 +7,21 @@ const FeedBox = () => {
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
 
-  function commentPlus(e) {
+  function commentChange(e) {
     setComment(e.target.value);
   }
 
   function isEnter(e) {
     if (e.key === 'Enter' && comment !== '') {
-      e.target.value = '';
-      let tmp = [...comments];
-      tmp.push(comment);
-      setComments(tmp);
-      setComment('');
+      commentPlus();
     }
   }
 
-  function commentHHH(e) {
-    console.log(e);
+  function commentPlus() {
+    let tmp = [...comments];
+    tmp.push(comment);
+    setComments(tmp);
+    setComment('');
   }
 
   return (
@@ -66,18 +65,19 @@ const FeedBox = () => {
         <div className="commentInputBox">
           <input
             onChange={e => {
-              commentPlus(e);
+              commentChange(e);
             }}
             onKeyDown={e => {
               isEnter(e);
             }}
+            value={comment}
             type="text"
             placeholder="댓글 달기..."
             className="commentInput"
           />
           <button
             onClick={e => {
-              commentHHH(e);
+              commentPlus();
             }}
             className="commentButton"
           >
