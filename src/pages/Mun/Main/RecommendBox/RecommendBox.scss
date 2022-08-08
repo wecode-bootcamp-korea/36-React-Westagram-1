@@ -1,0 +1,56 @@
+.recommendBox {
+  border: 1.5px solid #e6e6e6;
+  background-color: #ffffff;
+  border-radius: 4px;
+  height: 200px;
+  overflow: hidden;
+  margin-top: 11px;
+
+  .asideBoxTop {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 10px 15px;
+    font-weight: bold;
+  }
+
+  .asideUserSpace {
+    display: flex;
+    align-items: center;
+    height: 50px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 70%;
+      margin: 0px 15px;
+    }
+
+    .asideUser {
+      font-size: 13px;
+
+      .userName {
+        font-weight: bold;
+        padding: 1px;
+        padding-right: 4px;
+      }
+
+      .asideUserFriend {
+        display: inline-block;
+        color: #9e9e9e;
+        padding: 1px;
+        width: 167px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .followButton {
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+      color: #0095f6;
+    }
+  }
+}

@@ -10,7 +10,11 @@ const Comment = props => {
           <span>{comment}</span>
         </div>
         <div className="commentImgBox">
-          <img src="./images/heart.png" className="commentHeart" alt="tmp" />
+          <img
+            src="./images/Mun/heart.png"
+            className="commentHeart"
+            alt="tmp"
+          />
         </div>
       </div>
     );
