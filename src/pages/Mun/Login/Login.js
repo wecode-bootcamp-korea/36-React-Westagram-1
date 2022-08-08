@@ -4,17 +4,19 @@ import { useState } from 'react';
 
 function Login() {
   const navigate = useNavigate();
-
-  const [id, setId] = useState(null);
-  const [password, setPassword] = useState(null);
   let btnDisabled = true;
 
+  const [userId, setuserId] = useState({
+    id: '',
+    password: '',
+  });
+
   function saveUserId(e) {
-    e.target.id === 'id' ? setId(e.target.value) : setPassword(e.target.value);
+    setuserId({ ...userId, [e.target.id]: e.target.value });
   }
 
   function validation() {
-    if (id?.includes('@') && password?.length > 4) {
+    if (userId['id'].includes('@') && userId['password'].length > 4) {
       btnDisabled = false;
       return 'loginButtonActive';
     } else {
