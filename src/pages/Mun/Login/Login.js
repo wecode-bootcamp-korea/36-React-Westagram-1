@@ -46,7 +46,7 @@ function Login() {
       <button
         className={validation()}
         onClick={() => {
-          navigate('/main');
+          navigate('/main-mun');
         }}
         disabled={btnDisabled}
       >
