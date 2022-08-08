@@ -3,6 +3,7 @@ import Comment from './Comment/Comment';
 import { useState } from 'react';
 import './FeedBox.scss';
 const FeedBox = () => {
+  const myName = 'nyam_nyam2';
   const exist = [
     { AbC_0078: '와~ 너무 멋있어!!!!' },
     { ioi_oio: '잘 보고 갑니다.' },
@@ -11,7 +12,9 @@ const FeedBox = () => {
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
 
-  const myName = 'nyam_nyam2';
+  function btnStyle() {
+    return comment.length > 0 ? 'commentButtonAct' : 'commentButton';
+  }
 
   function commentChange(e) {
     setComment(e.target.value);
@@ -25,6 +28,15 @@ const FeedBox = () => {
     setComments(tmp);
     setComment('');
   }
+
+  // function commentButtonStyle(idx) {
+  //     if (commentInput[idx].value.length > 0) {
+  //         commentButton[idx].style.color = '#0095F6'
+  //         commentButton[idx].style.fontWeight = 'bold'
+  //     } else {
+  //         commentButton[idx].style = '';
+  //     }
+  // }3
 
   return (
     <section className="feedBox">
@@ -87,7 +99,7 @@ const FeedBox = () => {
             onClick={e => {
               commentPlus(e);
             }}
-            className="commentButton"
+            className={btnStyle()}
           >
             게시
           </button>
