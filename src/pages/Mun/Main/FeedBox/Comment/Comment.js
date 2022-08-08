@@ -4,15 +4,20 @@ import { useState } from 'react';
 
 const Comment = props => {
   const [heartSrc, setHeartSrc] = useState([true, './images/Mun/heart.png']);
-  const [isShow, setIsShow] = useState(true);
 
-  function commentHeart(e) {
+  function commentHeart() {
     heartSrc[0]
       ? setHeartSrc([false, './images/Mun/redHeart.png'])
       : setHeartSrc([true, './images/Mun/heart.png']);
   }
 
-  return isShow ? (
+  function onRemove() {
+    let tmpComments = [...props.comments];
+    tmpComments.splice(props.idx, 1);
+    props.setComments(tmpComments);
+  }
+
+  return (
     <div className="commentBox" key={props.idx}>
       <div className="comment">
         <span className="userName">{props.nickname || props.myName}</span>
@@ -22,7 +27,7 @@ const Comment = props => {
         {props.new ? (
           <img
             onClick={() => {
-              setIsShow(false);
+              onRemove();
             }}
             src={'./images/Mun/close.png'}
             className="commentClose"
@@ -37,7 +42,7 @@ const Comment = props => {
         />
       </div>
     </div>
-  ) : null;
+  );
 };
 
 export default Comment;

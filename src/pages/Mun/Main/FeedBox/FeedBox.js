@@ -80,6 +80,9 @@ const FeedBox = () => {
                 comment={comment}
                 new={true}
                 key={idx}
+                idx={idx}
+                comments={comments}
+                setComments={setComments}
               />
             );
           })}
