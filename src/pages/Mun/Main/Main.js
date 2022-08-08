@@ -1,17 +1,15 @@
 import './Main.scss';
 import Comment from './Comment/Comment';
+import Nav from './Nav/Nav2';
 import { useState } from 'react';
 
 let firstComment = ['와~ 너무 멋있어!!!!', '잘 보고 갑니다.', '뭉클해져요'];
-
 function Main() {
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState(firstComment);
-
   function commentPlus(e) {
     setComment(e.target.value);
   }
-
   function isEnter(e) {
     if (e.key === 'Enter') {
       e.target.value = '';
@@ -23,22 +21,7 @@ function Main() {
 
   return (
     <>
-      <nav className="navbar">
-        <div className="leftLogo">
-          <img
-            src="images/Mun/instagram.png"
-            alt="tmp"
-            className="leftLogoImg"
-          />
-          | westagram
-        </div>
-        <input className="navInput" type="text" placeholder="검색" />
-        <div className="rigthMenu">
-          <img src="images/Mun/Mun/explore.png" alt="tmp" />
-          <img src="images/Mun/Mun/heart.png" alt="tmp" />
-          <img src="images/Mun/profile.png" alt="tmp" />
-        </div>
-      </nav>
+      <Nav />
       <div className="mainContainer">
         <div className="feedContainer">
           <section className="feedBox">
@@ -71,20 +54,7 @@ function Main() {
               </div>
               <div className="commentContainer">
                 <div className="commentMore">댓글</div>
-                <div className="commentBox">
-                  <Comment comments={comments} />
-                  <div className="commentImgBox">
-                    <img
-                      src="./images/Mun/heart.png"
-                      className="commentHeart"
-                      alt="tmp"
-                    />
-                  </div>
-                </div>
-
-                {comments.map(c => {
-                  return <Comment contents={c} key={c} />;
-                })}
+                <Comment comments={comments} />
               </div>
               <div className="commentTime">42분 전</div>
               <div className="commentInputBox">
