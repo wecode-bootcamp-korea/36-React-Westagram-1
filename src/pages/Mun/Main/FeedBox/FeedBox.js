@@ -60,7 +60,9 @@ const FeedBox = () => {
         </div>
 
         <div className="commentContainer">
-          <div className="commentMore">댓글</div>
+          <div className="commentMore">{`댓글 ${
+            exist.length + comments.length
+          }개`}</div>
           {exist.map((comment, idx) => {
             return (
               <Comment
