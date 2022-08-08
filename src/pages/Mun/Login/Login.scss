@@ -13,20 +13,17 @@ body {
   height: 520px;
   width: 480px;
   transform: translate(-50%, -50%);
-
   .loginTitle {
     font-family: 'Lobster', cursive;
     margin-top: 30px;
     font-size: 50px;
     margin-bottom: 30px;
   }
-
   .loginBox {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     margin-bottom: 20px;
-
     #id,
     #password {
       width: 300px;
@@ -38,7 +35,7 @@ body {
     }
   }
 
-  #loginButton {
+  .loginButton {
     width: 300px;
     background-color: #c4e1fb;
     border: none;
@@ -47,7 +44,13 @@ body {
     color: #ffffff;
   }
 
-  .loginButtonHover {
+  .loginButtonActive {
+    width: 300px;
+    background-color: #0095f6;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    color: #ffffff;
     cursor: pointer;
   }
 
@@ -59,7 +62,6 @@ body {
     color: #d1565b;
     font-size: 15px;
   }
-
   .question {
     margin-top: 180px;
     text-decoration: none;
