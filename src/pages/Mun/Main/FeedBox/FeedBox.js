@@ -2,10 +2,16 @@ import React from 'react';
 import Comment from './Comment/Comment';
 import { useState } from 'react';
 import './FeedBox.scss';
-
 const FeedBox = () => {
+  const exist = [
+    { AbC_0078: '와~ 너무 멋있어!!!!' },
+    { ioi_oio: '잘 보고 갑니다.' },
+  ];
+
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
+
+  const myName = 'nyam_nyam2';
 
   function commentChange(e) {
     setComment(e.target.value);
@@ -13,6 +19,7 @@ const FeedBox = () => {
 
   function commentPlus(e) {
     e.preventDefault();
+    if (comment === '') return;
     let tmp = [...comments];
     tmp.push(comment);
     setComments(tmp);
@@ -51,10 +58,19 @@ const FeedBox = () => {
 
         <div className="commentContainer">
           <div className="commentMore">댓글</div>
-          <Comment nickname={'AbC_0078'} comments={['와~ 너무 멋있어!!!!']} />
-          <Comment nickname={'ioi_oio'} comments={['잘 보고 갑니다.']} />
-          <Comment nickname={'kkrm3'} comments={['뭉클해져요']} />
-          <Comment nickname={'nyam_nyam2'} comments={comments} />
+          {exist.map((comment, idx) => {
+            return (
+              <Comment
+                nickname={Object.keys(comment)}
+                comment={Object.values(comment)}
+                key={idx}
+              />
+            );
+          })}
+
+          {comments.map((comment, idx) => {
+            return <Comment nickname={myName} comment={comment} key={idx} />;
+          })}
         </div>
         <div className="commentTime">42분 전</div>
         <form className="commentInputBox">
