@@ -14,6 +14,7 @@ const Feed = props => {
     e.preventDefault();
     setComments([...comments, value]);
   };
+  console.log(comments);
   const clearValue = e => {
     registerComment(e);
     setValue('');

@@ -18,6 +18,7 @@ const Login = () => {
   const saveUserId = e => {
     const value = e.target.value;
     const ID = e.target.id;
+    // const {value,id} = e.target
     setInfo({
       ...info,
       [ID]: value,
@@ -54,6 +55,7 @@ const Login = () => {
             value={info.password}
             type="userPassword"
             name="userPassword"
+            s
             placeholder="비밀번호"
             required
             onChange={saveUserId}

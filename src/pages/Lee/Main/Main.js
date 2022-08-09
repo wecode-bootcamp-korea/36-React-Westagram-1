@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Nav from '../Nav/nav';
 import Feed from '../feed/Feed';
 import './main.scss';
 
 const Main = () => {
+  const [link, setLink] = useState([]);
+  console.log(link);
+  useEffect(() => {
+    fetch('/data/data.json')
+      .then(response => response.json())
+      .then(result => setLink(result));
+  }, []);
+
   return (
     <div className="main">
       <Nav />
@@ -21,6 +29,7 @@ const Main = () => {
           <div className="feedContainer">
             <Feed data={USER_INFORMATIONS} feed={FEED_INFORMATION} />
           </div>
+
           <div className="main-right">
             <div className="profile">
               <img
@@ -57,9 +66,24 @@ const Main = () => {
               ))}
             </div>
             <div className="recommendation middleText">
-              소개, 도움말 , 홍보센터, API, 채용정보 <br />
+              {link.map(info => (
+                <>
+                  <span key={info.id}>
+                    <a
+                      href="https://www.instagram.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {info.name}
+                    </a>
+                  </span>
+                  <span>.</span>
+                </>
+              ))}
+              <br />
+              <br />
               <i className="uil uil-copyright" />
-              westagram from juyoung
+              <span>westagram from juyoung</span>
             </div>
           </div>
         </main>
