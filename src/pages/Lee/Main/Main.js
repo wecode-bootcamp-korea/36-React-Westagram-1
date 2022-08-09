@@ -4,76 +4,26 @@ import Feed from '../feed/Feed';
 import './main.scss';
 
 const Main = () => {
+  console.log(FEED_STORY_IMGS);
   return (
     <div className="main">
       <Nav />
       <main>
         <div className="feeds__stories">
-          <div className="feeds__story">
-            <img
-              className="img__round-big"
-              src="images/Lee/ANGMOND.jpeg"
-              alt="nope"
-            />
-            <div className="smallText">Angmond</div>
-          </div>
-          <div className="feeds__story">
-            <img
-              className="img__round-big"
-              src="images/Lee/APEACH.jpeg"
-              alt="nope"
-            />
-            <div className="smallText">Apeach</div>
-          </div>
-          <div className="feeds__story">
-            <img
-              className="img__round-big"
-              src="images/Lee/FRODO.jpeg"
-              alt="nope"
-            />
-            <div className="smallText">Frodo</div>
-          </div>
-          <div className="feeds__story">
-            <img
-              className="img__round-big"
-              src="images/Lee/JAY-G.jpeg"
-              alt="nope"
-            />
-            <div className="smallText">Jay-G</div>
-          </div>
-          <div className="feeds__story">
-            <img
-              className="img__round-big"
-              src="images/Lee/JORDY.jpeg"
-              alt="nope"
-            />
-            <div className="smallText">Jordy</div>
-          </div>
-          <div className="feeds__story">
-            <img
-              className="img__round-big"
-              src="images/Lee/ANGMOND.jpeg"
-              alt="nope"
-            />
-            <div className="smallText">Neo</div>
-          </div>
-          <div className="feeds__story">
-            <img
-              className="img__round-big"
-              src="images/Lee/ANGMOND.jpeg"
-              alt="nope"
-            />
-            <div className="smallText">Ryan</div>
-          </div>
+          {FEED_STORY_IMGS.map(item => (
+            <div className="feeds__story">
+              <img className="img__round-big" src={item.src} alt={item.alt} />
+              <div className="smallText">{item.name}</div>
+            </div>
+          ))}
           <div className="new-feed middleText">새 게시물</div>
         </div>
-
         <div className="feedContainer">
           <Feed />
           <Feed />
           <Feed />
+          <Feed />
         </div>
-
         <div className="main-right">
           <div className="profile">
             <img
@@ -191,6 +141,15 @@ const Main = () => {
 };
 
 export default Main;
+
+const FEED_STORY_IMGS = [
+  { id: 1, src: 'images/Lee/ANGMOND.jpeg', alt: 'argmond', name: 'argmond' },
+  { id: 2, src: 'images/Lee/ANGMOND.jpeg', alt: 'argmond', name: 'argmond' },
+  { id: 3, src: 'images/Lee/ANGMOND.jpeg', alt: 'argmond', name: 'argmond' },
+  { id: 4, src: 'images/Lee/ANGMOND.jpeg', alt: 'argmond', name: 'argmond' },
+  { id: 5, src: 'images/Lee/ANGMOND.jpeg', alt: 'argmond', name: 'argmond' },
+  { id: 6, src: 'images/Lee/ANGMOND.jpeg', alt: 'argmond', name: 'argmond' },
+];
 
 // 멘토님이 작성한 방식
 //refactoring

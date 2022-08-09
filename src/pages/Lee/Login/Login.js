@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import './login.scss';
 import { Link, useNavigate } from 'react-router-dom';
+import './login.scss';
 
 const Login = () => {
-  const [id, setId] = useState({
+  const [info, setInfo] = useState({
     user: '',
     password: '',
   });
   const [isActive, setIsActive] = useState(false);
 
   const isPassedLogin = () => {
-    return id.user.includes('@') && id.password.length > 4
+    return info.user.includes('@') && info.password.length > 4
       ? setIsActive(true)
       : setIsActive(false);
   };
@@ -18,8 +18,8 @@ const Login = () => {
   const saveUserId = e => {
     const value = e.target.value;
     const ID = e.target.id;
-    setId({
-      ...id,
+    setInfo({
+      ...info,
       [ID]: value,
     });
   };
@@ -39,7 +39,7 @@ const Login = () => {
           <label>Email</label>
           <input
             className="inputClass"
-            value={id.user}
+            value={info.user}
             type="email"
             name="userEmail"
             id="user"
@@ -51,7 +51,7 @@ const Login = () => {
           <input
             className="inputClass"
             id="password"
-            value={id.password}
+            value={info.password}
             type="userPassword"
             name="userPassword"
             placeholder="비밀번호"
@@ -64,7 +64,7 @@ const Login = () => {
             onClick={goToMain}
             type="submit"
             disabled={
-              id.user.includes('@') && id.password.length > 4 ? false : true
+              info.user.includes('@') && info.password.length > 4 ? false : true
             }
             value="로그인"
           />

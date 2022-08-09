@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Reply from '../reply/Reply';
 import './feed.scss';
 
 const Feed = () => {
   const [value, setValue] = useState('');
   const [comments, setComments] = useState([]);
-  //굳이 useState 이 필요한가?? maybe not
+  const reply = useRef(null);
 
   const changeHandler = e => {
     setValue(e.target.value);
@@ -13,11 +13,20 @@ const Feed = () => {
 
   const registerComment = e => {
     e.preventDefault();
-    const pot = [...comments];
-    pot.push(value);
-    setComments(pot);
+    setComments([...comments, value]);
+  };
+  const clearValue = e => {
+    registerComment(e);
     setValue('');
   };
+
+  // const scrollToBottom = () => {
+  //   reply.current.scrollIntoView({ behavior: 'smooth' });
+  // };
+
+  useEffect(() => {
+    comments.current?.scrollIntoView();
+  }, [comments]);
 
   return (
     <div className="feed">
@@ -44,15 +53,14 @@ const Feed = () => {
             alt="nope"
           />
         </article>
-
         <div className="push__icon">
           <i className="uil uil-heart-alt icon" />
           <i className="uil uil-comment icon" />
           <i className="uil uil-user icon" />
           <i className="uil uil-bookmark-full icon icon-absolute" />
         </div>
-
-        <ul className="replSection">
+        ``
+        <ul className="replSection" ref={reply}>
           <li className="repl middleText">
             <span className="repl middleText">
               juyoung님 외 3명이 좋아합니다
@@ -65,16 +73,7 @@ const Feed = () => {
             <span className="repl smallText reply">댓글 2개 다시보기</span>
           </li>
           <Reply comment={comments} />
-          {/* {comments.map((name, idx) => {
-            return (
-              <li key={idx}>
-                <span className="name">dev_codyman0</span>
-                <span className="smallText">{name}</span>
-              </li>
-            );
-          })} */}
         </ul>
-
         <form className="feeds__input">
           <i className="uil uil-smile icon" />
           <input
@@ -84,12 +83,9 @@ const Feed = () => {
             value={value}
             onChange={changeHandler}
           />
-          <input
-            className="button-style"
-            type="submit"
-            value="게시"
-            onClick={registerComment}
-          />
+          <button className="button-style" type="submit" onClick={clearValue}>
+            게시
+          </button>
         </form>
       </div>
     </div>
