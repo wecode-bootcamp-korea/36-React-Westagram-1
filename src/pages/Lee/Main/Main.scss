@@ -181,15 +181,17 @@ body {
     height: 240px;
     color: #d4d4d4;
     @include globalTexts($size, $color, left);
+    div {
+      display: inline;
+      span {
+        margin: 2px;
+        a {
+          text-decoration: none;
+          color: #8e8e8e;
 
-    span {
-      margin: 2px;
-      a {
-        text-decoration: none;
-        color: #8e8e8e;
-
-        &:hover {
-          color: red;
+          &:hover {
+            color: red;
+          }
         }
       }
     }

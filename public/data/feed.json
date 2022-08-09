@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "src": "images/Lee/프3.jpeg",
+    "alt": "profilePicture",
+    "name": "dev_codyman0",
+    "subName": "오늘은 여기까지1",
+    "feature": "deanthony_hatter님이 팔로우합니다.",
+    "articleSrc": "images/Lee/피드.jpg",
+    "articleAlt": "big-picture",
+    "reply": "피드 게시 글 1",
+    "heart": "2312414명"
+  },
+  {
+    "id": 2,
+    "src": "images/Lee/프3.jpeg",
+    "alt": "profilePicture",
+    "name": "wecode__bootcamp",
+    "subName": "오늘은 여기까지2",
+    "feature": "we_are_code님 외 1명이 팔로우합니다",
+    "articleSrc": "images/Lee/피드.jpg",
+    "articleAlt": "big-picture",
+    "saying": "피드 게시 글 2!",
+    "heart": "414212명"
+  },
+  {
+    "id": 3,
+    "src": "images/Lee/프3.jpeg",
+    "alt": "profilePicture",
+    "name": "that_techsiss",
+    "subName": "오늘은 여기까지3",
+    "feature": "Instagram 신규 가입",
+    "articleSrc": "images/Lee/피드.jpg",
+    "articleAlt": "big-picture",
+    "saying": "피드 게시 글 3!",
+    "heart": "22343명"
+  },
+  {
+    "id": 4,
+    "src": "images/Lee/프3.jpeg",
+    "alt": "profilePicture",
+    "name": "edoc_code",
+    "subName": "오늘은 여기까지4",
+    "feature": "Instagram 신규 가입",
+    "articleSrc": "images/Lee/피드.jpg",
+    "articleAlt": "big-picture",
+    "saying": "피드 게시 글 4!",
+    "heart": "10023명"
+  },
+  {
+    "id": 5,
+    "src": "images/Lee/프3.jpeg",
+    "alt": "profilePicture",
+    "name": "codingpathsala",
+    "subName": "오늘은 여기까지5",
+    "articleSrc": "images/Lee/피드.jpg",
+    "articleAlt": "big-picture",
+    "saying": "피드 게시 글 5",
+    "heart": "9명"
+  }
+]

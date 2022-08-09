@@ -28,7 +28,7 @@ const Feed = props => {
   //   comments.current?.scrollIntoView();
   // }, [comments]);
 
-  return props.feed.map(info => (
+  return props.data.map(info => (
     <div key={info.id} className="feed">
       <div className="feeds">
         <div className="feeds__name story__profile">
@@ -69,12 +69,12 @@ const Feed = props => {
             <span className="repliment smallText reply">댓글 2개 다시보기</span>
           </li>
 
-          {comments.map((comment, idx) => (
+          {/* {comments.map((comment, idx) => (
             <li key={idx}>
               <span className="name">{info.name}</span>
               <span className="smallText">{comment}</span>
             </li>
-          ))}
+          ))} */}
         </ul>
         <form className="feeds__input">
           <i className="uil uil-smile icon" />
