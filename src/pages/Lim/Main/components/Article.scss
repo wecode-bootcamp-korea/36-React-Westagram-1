@@ -1,0 +1,124 @@
+article {
+  width: 470px;
+  height: auto;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #eeeeee;
+  .proBar {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: 56px;
+    border-bottom: 1px solid #eeeeee;
+
+    .proInfo {
+      display: flex;
+      align-items: center;
+      margin: auto 10px;
+
+      .proImg {
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+        border-radius: 50%;
+      }
+
+      .proName {
+        font-weight: bold;
+      }
+    }
+
+    .fa-ellipsis {
+      margin: auto 10px;
+    }
+  }
+
+  .feedImg {
+    width: 470px;
+    height: 470px;
+  }
+
+  .mainInfo {
+    display: flex;
+    flex-direction: column;
+    width: 436px;
+    margin: 0 auto;
+
+    .like {
+      display: flex;
+      justify-content: space-between;
+      height: 46px;
+      align-items: center;
+
+      .likeMenu3 {
+        margin: 0 5px;
+        font-size: 25px;
+      }
+      .fa-bookmark {
+        font-size: 25px;
+      }
+    }
+
+    .likeNum {
+      display: flex;
+      align-items: center;
+      height: 25px;
+
+      .likeImg {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+    }
+
+    .feedText {
+      display: flex;
+      align-items: center;
+      height: 25px;
+
+      .userId {
+        font-weight: bold;
+        margin-right: 5px;
+        font-size: 15px;
+      }
+
+      .userText {
+        font-size: 14px;
+      }
+    }
+
+    .comments {
+      height: auto;
+    }
+
+    .feedTime {
+      height: 20px;
+      color: rgb(63, 63, 63);
+      font-size: 12px;
+    }
+  }
+
+  .addComment {
+    display: flex;
+    justify-self: end;
+    height: 45px;
+    border-top: 1px solid #eeeeee;
+
+    .commentInput {
+      width: 90%;
+      margin: 0 10px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .commentBtn {
+      width: 10%;
+      color: #0095f6;
+      background-color: white;
+      border: none;
+      border-radius: 8px;
+    }
+  }
+}

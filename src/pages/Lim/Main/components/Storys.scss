@@ -1,0 +1,29 @@
+.side {
+  height: auto;
+  margin: 15px 0;
+  border: 1px solid #eeeeee;
+  border-radius: 3px;
+  background-color: white;
+
+  .sideBox {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+
+    .sideBoxName {
+      color: gray;
+      font-size: 13px;
+      margin: auto 10px;
+    }
+
+    .sideBoxMore {
+      font-size: 14px;
+      font-weight: 500;
+      margin: auto 10px;
+    }
+  }
+
+  .userList {
+    margin: 0 10px;
+  }
+}
