@@ -16,7 +16,7 @@ function Login() {
   };
 
   const validation = (id, pw) => {
-    return id.indexOf('@') !== -1 && pw.length >= 5 ? false : true;
+    return id.includes('@') && pw.length >= 5 ? false : true;
   };
 
   return (
@@ -41,7 +41,7 @@ function Login() {
           />
           <button
             className="loginBtn"
-            onClick={() => navigate('/main-lim')}
+            onClick={() => navigate('/main')}
             disabled={validation(id, pw)}
           >
             로그인

@@ -1,0 +1,15 @@
+footer {
+  color: rgb(178, 178, 178);
+  font-size: 13px;
+  li {
+    display: inline-block;
+    a {
+      padding-right: 3px;
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+  p {
+    padding-top: 20px;
+  }
+}
