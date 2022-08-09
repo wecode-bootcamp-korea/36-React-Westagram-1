@@ -2,30 +2,31 @@ import React, { useState } from 'react';
 import './CommentInput.scss';
 
 const CommentInput = props => {
-  let [commentText, setCommentText] = useState([
-    { key: 0, userName: '', comment: '댓글이 없습니다.' },
-  ]);
+  const [comment, setComment] = useState('');
 
-  const commentCreator = event => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      setCommentText(previousState => {
-        return [
-          ...previousState,
-          { userName: props.mainUserId, comment: event.target.value },
-        ];
-      });
+  const commentInput = event => setComment(event.target.value);
+
+  const [commentArray, setCommentArray] = useState([]);
+
+  const registComment = event => {
+    event.preventDefault();
+    if (comment === '') {
+      return;
     }
+    setCommentArray([...commentArray, comment]);
+    setComment('');
   };
+
+  const commentValid = comment.length >= 1;
+  let userInfo = props;
 
   return (
     <>
       <div className="comment">
-        {commentText.map(userComment => {
+        {commentArray.map((comment, index) => {
           return (
-            <p key={userComment.key}>
-              <span>{userComment.userName}</span>
-              {userComment.comment}
+            <p key={index}>
+              <span>{userInfo.mainUserId}</span>&nbsp;{comment}
             </p>
           );
         })}
@@ -36,10 +37,17 @@ const CommentInput = props => {
         <input
           className="commentInput"
           type="text"
-          placeholder="댓글을 달아보아요!"
-          onKeyUp={commentCreator}
+          placeholder="댓글을 달아보아요"
+          value={comment}
+          onChange={commentInput}
         />
-        <button type="submit" className="postButton">
+        <button
+          type="submit"
+          className="postButton"
+          onClick={registComment}
+          style={{ opacity: commentValid ? '100%' : '30%' }}
+          disabled={commentValid ? false : true}
+        >
           게시
         </button>
       </form>

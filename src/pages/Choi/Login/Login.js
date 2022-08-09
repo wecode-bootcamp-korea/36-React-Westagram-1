@@ -9,14 +9,10 @@ const Login = () => {
   };
 
   const userPwSet = event => {
-    console.log(event.target.value);
     setUserPwSaved(event.target.value);
   };
 
-  console.log(userPwSaved);
-
   const inputValid = userIdSaved.includes('@') && userPwSaved.length > 5;
-  console.log(inputValid);
 
   return (
     <body className="loginBody">
@@ -40,7 +36,7 @@ const Login = () => {
             style={
               inputValid
                 ? { backgroundColor: 'blue' }
-                : { backgroundColor: '#acd0e6f' }
+                : { backgroundColor: '#b5dcf7' }
             }
             disabled={inputValid ? false : true}
           >
