@@ -5,7 +5,6 @@ import './main.scss';
 
 const Main = () => {
   const [link, setLink] = useState([]);
-  console.log(link);
   useEffect(() => {
     fetch('/data/data.json')
       .then(response => response.json())
