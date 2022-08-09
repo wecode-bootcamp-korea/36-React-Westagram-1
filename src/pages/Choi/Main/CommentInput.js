@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CommentList from './CommentList';
 import './CommentInput.scss';
 
 const CommentInput = props => {
@@ -25,9 +26,12 @@ const CommentInput = props => {
       <div className="comment">
         {commentArray.map((comment, index) => {
           return (
-            <p key={index}>
-              <span>{userInfo.mainUserId}</span>&nbsp;{comment}
-            </p>
+            <CommentList
+              key={index}
+              comment={comment}
+              listNumber={index}
+              userMainId={userInfo.mainUserId}
+            />
           );
         })}
 
