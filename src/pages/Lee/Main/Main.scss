@@ -121,10 +121,19 @@ main {
   }
 
   .story__names {
-    display: flex;
-    font-weight: 700;
-    justify-content: space-between;
+    width: 100%;
     margin: 10px;
+    @include flexSort(space-between);
+
+    .middleText {
+      @include globalTexts(12px, black, left);
+      font-weight: 900;
+    }
+
+    .smallText {
+      @include globalTexts($size, $color, left);
+      font-weight: 900;
+    }
   }
 
   .story {
@@ -153,9 +162,6 @@ main {
         position: absolute;
         right: 20px;
         @include globalTexts(smaller, #6fbbf7, center);
-      }
-
-      .smallerText {
       }
     }
   }

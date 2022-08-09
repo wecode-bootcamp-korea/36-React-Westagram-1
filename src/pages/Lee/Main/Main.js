@@ -39,94 +39,26 @@ const Main = () => {
             <div className="transition small__text">전환</div>
           </div>
           <div className="story__names">
-            <div className="story__name smallText">회원님을 위한 추천</div>
-            <div className="story__view middleText">모두 보기</div>
+            <div className="smallText">회원님을 위한 추천</div>
+            <div className="middleText">모두 보기</div>
           </div>
           <div className="story">
-            <div className="story__profile">
-              <img
-                className="img__round-small"
-                src="images/Lee/프3.jpeg"
-                alt="nope"
-              />
-              <div className="profile__text">
-                <div className="middleText">
-                  <h4>dev_codyman0</h4>
+            {PROFILE_INFORMATIONS.map(item => (
+              <div key={item.id} className="story__profile">
+                <img
+                  className="img__round-small"
+                  src={item.src}
+                  alt={item.alt}
+                />
+                <div className="profile__text">
+                  <div className="middleText">
+                    <h4>{item.name}</h4>
+                  </div>
+                  <div className="smallText">{item.feature}</div>
                 </div>
-                <div className="smallText">에러 해결자</div>
+                <div className="transition smallerText">팔로우</div>
               </div>
-              <div className="transition smallerText">팔로우</div>
-            </div>
-            <div className="story__profile">
-              <img
-                className="img__round-small"
-                src="images/Lee/프3.jpeg"
-                alt="nope"
-              />
-              <div className="profile__text">
-                <div className="middleText">
-                  <h4>dev_codyman0</h4>
-                </div>
-                <div className="smallText">에러 해결자</div>
-              </div>
-              <div className="transition smallerText">팔로우</div>
-            </div>
-            <div className="story__profile">
-              <img
-                className="img__round-small"
-                src="images/Lee/프3.jpeg"
-                alt="nope"
-              />
-              <div className="profile__text">
-                <div className="middleText">
-                  <h4>dev_codyman0</h4>
-                </div>
-                <div className="smallText">에러 해결자</div>
-              </div>
-              <div className="transition smallerText">팔로우</div>
-            </div>
-            <div className="story__profile">
-              <img
-                className="img__round-small"
-                src="images/Lee/프3.jpeg"
-                alt="nope"
-              />
-              <div className="profile__text">
-                <div className="middleText">
-                  <h4>dev_codyman0</h4>
-                </div>
-                <div className="smallText">에러 해결자</div>
-              </div>
-              <div className="transition smallerText">팔로우</div>
-            </div>
-            <div className="story__profile">
-              <img
-                className="img__round-small"
-                src="images/Lee/프3.jpeg"
-                alt="nope"
-              />
-              <div className="profile__text">
-                <div className="middleText">
-                  <h4>dev_codyman0</h4>
-                </div>
-                <div className="smallText">에러 해결자</div>
-              </div>
-              <div className="transition smallerText">팔로우</div>
-            </div>
-            <div className="story__profile">
-              <img
-                className="img__round-small"
-                src="images/Lee/프3.jpeg"
-                alt="nope"
-              />
-              <div className="profile__text">
-                <div className="middleText">
-                  <h4>dev_codyman0</h4>
-                </div>
-                <div className="smallText">에러 해결자</div>
-              </div>
-              <div className="transition smallerText">팔로우</div>
-            </div>
+            ))}
           </div>
           <div className="recommendation middleText">
             소개, 도움말 , 홍보센터, API, 채용정보 <br />
@@ -148,6 +80,44 @@ const FEED_STORY_IMGS = [
   { id: 4, src: 'images/Lee/ANGMOND.jpeg', alt: 'argmond', name: 'argmond' },
   { id: 5, src: 'images/Lee/ANGMOND.jpeg', alt: 'argmond', name: 'argmond' },
   { id: 6, src: 'images/Lee/ANGMOND.jpeg', alt: 'argmond', name: 'argmond' },
+];
+
+const PROFILE_INFORMATIONS = [
+  {
+    id: 1,
+    src: 'images/Lee/프3.jpeg',
+    alt: 'profilePicture',
+    name: 'dev_codyman0',
+    feature: '에러 해결자',
+  },
+  {
+    id: 2,
+    src: 'images/Lee/프3.jpeg',
+    alt: 'profilePicture',
+    name: 'dev_codyman0',
+    feature: '에러 해결자',
+  },
+  {
+    id: 3,
+    src: 'images/Lee/프3.jpeg',
+    alt: 'profilePicture',
+    name: 'dev_codyman0',
+    feature: '에러 해결자',
+  },
+  {
+    id: 4,
+    src: 'images/Lee/프3.jpeg',
+    alt: 'profilePicture',
+    name: 'dev_codyman0',
+    feature: '에러 해결자',
+  },
+  {
+    id: 5,
+    src: 'images/Lee/프3.jpeg',
+    alt: 'profilePicture',
+    name: 'dev_codyman0',
+    feature: '에러 해결자',
+  },
 ];
 
 // 멘토님이 작성한 방식
