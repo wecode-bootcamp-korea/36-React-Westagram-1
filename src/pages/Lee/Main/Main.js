@@ -4,14 +4,13 @@ import Feed from '../feed/Feed';
 import './main.scss';
 
 const Main = () => {
-  console.log(FEED_STORY_IMGS);
   return (
     <div className="main">
       <Nav />
       <main>
         <div className="feeds__stories">
           {FEED_STORY_IMGS.map(item => (
-            <div className="feeds__story">
+            <div key={item.id} className="feeds__story">
               <img className="img__round-big" src={item.src} alt={item.alt} />
               <div className="smallText">{item.name}</div>
             </div>
