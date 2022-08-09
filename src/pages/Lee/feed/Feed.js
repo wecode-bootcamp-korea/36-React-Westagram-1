@@ -59,7 +59,6 @@ const Feed = () => {
           <i className="uil uil-user icon" />
           <i className="uil uil-bookmark-full icon icon-absolute" />
         </div>
-        ``
         <ul className="replSection" ref={reply}>
           <li className="repl middleText">
             <span className="repl middleText">

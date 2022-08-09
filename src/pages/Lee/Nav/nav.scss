@@ -3,11 +3,13 @@
 
 .Nav {
   width: 100vw;
-  border-bottom: 1px solid #faeaea;
+  border-bottom: 1px solid #efefef;
+  box-shadow: 0.3px 0.3px 0.3px 0.3px #efefef;
 
   .navClass {
     @include flexSort(space-around);
     max-width: 1024px;
+    height: 50px;
     margin: 0 auto;
     padding: 20px;
 
@@ -73,7 +75,8 @@
         margin-right: 30px;
       }
       .img__round-small {
-        @include globalimages(30px);
+        @include globalimages(25px);
+        border: 0.5px solid gray;
       }
     }
   }
