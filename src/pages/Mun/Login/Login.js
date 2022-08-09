@@ -12,6 +12,7 @@ function Login() {
   });
 
   function saveUserId(e) {
+    console.log(e.target);
     setuserId({ ...userId, [e.target.id]: e.target.value });
   }
 
