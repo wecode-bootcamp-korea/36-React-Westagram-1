@@ -47,9 +47,8 @@ const CommentInput = props => {
         />
         <button
           type="submit"
-          className="postButton"
+          className={commentValid ? 'btnActive' : 'btnInactive'}
           onClick={registComment}
-          style={{ opacity: commentValid ? '100%' : '30%' }}
           disabled={commentValid ? false : true}
         >
           게시

@@ -1,7 +1,7 @@
 import React from 'react';
+import './Section.scss';
 import Aside from './Aside';
 import CommentInput from './CommentInput';
-import './Section.scss';
 
 const Section = () => {
   const userId = 'qsun81';

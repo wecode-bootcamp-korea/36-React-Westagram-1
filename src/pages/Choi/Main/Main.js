@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './Nav';
-import './Main.scss';
 import Section from './Section';
+import './Main.scss';
 
 const Main = () => {
   return (

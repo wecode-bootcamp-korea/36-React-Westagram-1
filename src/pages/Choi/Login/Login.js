@@ -33,11 +33,7 @@ const Login = () => {
           />
 
           <button
-            style={
-              inputValid
-                ? { backgroundColor: 'blue' }
-                : { backgroundColor: '#b5dcf7' }
-            }
+            className={inputValid ? 'btnActive' : 'btnInactive'}
             disabled={inputValid ? false : true}
           >
             로그인

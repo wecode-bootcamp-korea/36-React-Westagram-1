@@ -45,6 +45,14 @@
         border: none;
         border-radius: 3px;
       }
+
+      .btnActive {
+        background-color: blue;
+      }
+
+      .btnInactive {
+        background-color: #b5dcf7;
+      }
     }
 
     .forgotPassword {

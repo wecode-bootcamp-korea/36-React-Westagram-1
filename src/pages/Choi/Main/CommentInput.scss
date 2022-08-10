@@ -5,9 +5,11 @@
     margin-left: 10px;
     background-color: white;
     text-align: left;
+    font-size: 12px;
 
     span {
       font-weight: 600;
+      font-size: 14px;
     }
   }
 
@@ -40,7 +42,7 @@
     }
   }
 
-  .postButton {
+  button {
     padding: 10px;
     border: none;
     white-space: nowrap;
@@ -51,5 +53,13 @@
     &:hover {
       cursor: pointer;
     }
+  }
+
+  .btnActive {
+    opacity: 100%;
+  }
+
+  .btnInactive {
+    opacity: 30%;
   }
 }
