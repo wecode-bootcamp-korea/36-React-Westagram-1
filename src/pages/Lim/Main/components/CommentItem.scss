@@ -1,0 +1,15 @@
+li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+
+  .commentUserId {
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .commentUserText {
+    font-size: 14px;
+  }
+}

@@ -19,24 +19,6 @@ function Login() {
     return id.includes('@') && pw.length >= 5 ? false : true;
   };
 
-  const signIn = e => {
-    e.preventDefault();
-    fetch('http://10.58.5.66:3000/auth/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: id,
-        password: pw,
-      }),
-    })
-      .then(response => response.json())
-      .then(data => console.log(data));
-  };
-
-  console.log(id, pw);
-
   return (
     <div className="loginContainer">
       <div className="loginBox">
@@ -59,8 +41,7 @@ function Login() {
           />
           <button
             className="loginBtn"
-            // onClick={() => navigate('/main-lim')}
-            onClick={signIn}
+            onClick={() => navigate('/main')}
             disabled={validation(id, pw)}
           >
             로그인
@@ -71,7 +52,7 @@ function Login() {
 
       <div className="signupContainer">
         <p>
-          계정이 없으신가요? <Link to="">가입하기</Link>
+          계정이 없으신가요? <Link to="/Main">가입하기</Link>
         </p>
       </div>
     </div>

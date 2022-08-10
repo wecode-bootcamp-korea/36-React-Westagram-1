@@ -1,0 +1,22 @@
+.user {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+
+  .userImg {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  .userId {
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .userInfo {
+    color: gray;
+    font-size: 12px;
+  }
+}
