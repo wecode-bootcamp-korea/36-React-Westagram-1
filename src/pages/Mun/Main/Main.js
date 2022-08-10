@@ -20,7 +20,7 @@ function Main() {
       });
   }, []);
 
-  if (data.length === 0) return <></>;
+  if (data.length === 0) return;
 
   return (
     <>
