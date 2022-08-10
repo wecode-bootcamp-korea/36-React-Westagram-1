@@ -1,9 +1,10 @@
 .loginContainer {
-  background-color: #fafafa;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #fafafa;
 
   .loginBox {
     display: flex;
@@ -48,6 +49,27 @@
           background-color: #c4e1fb;
         }
       }
+    }
+    a {
+      text-decoration: none;
+      color: #01376a;
+    }
+  }
+
+  .signupContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 70px;
+    margin-top: 15px;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    font-size: 14px;
+    a {
+      text-decoration: none;
+      color: #0095f6;
+      font-weight: bold;
     }
   }
 }

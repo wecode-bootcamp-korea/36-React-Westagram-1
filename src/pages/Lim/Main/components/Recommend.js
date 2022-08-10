@@ -4,10 +4,10 @@ import './Story.scss';
 function Recommend() {
   return (
     <div className="user">
-      <img className="userImg" src="/images/Lim/user.jpg" alt="user image" />
+      <img className="userImg" src="/images/Lim/petty.jpeg" alt="user image" />
       <div className="userIdInfo">
-        <p className="userId">Lucas_213</p>
-        <p className="userInfo">Grayson 팔로우 중</p>
+        <p className="userId">petty</p>
+        <p className="userInfo">crong님이 팔로우 중</p>
       </div>
     </div>
   );

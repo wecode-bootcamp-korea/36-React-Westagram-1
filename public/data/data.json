@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "loopy",
+    "text": "hello",
+    "likeNum": 30,
+    "feedImg": "/images/Lim/loopy.jpeg",
+    "profileImg": "/images/Lim/loopy.jpeg",
+    "commentImg": "/images/Lim/crong.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "crong",
+    "text": "bye",
+    "likeNum": 40,
+    "feedImg": "/images/Lim/crong.jpeg",
+    "profileImg": "/images/Lim/crong.jpeg",
+    "commentImg": "/images/Lim/poby.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "poby",
+    "text": "nice to meet you",
+    "likeNum": 50,
+    "feedImg": "/images/Lim/poby.jpeg",
+    "profileImg": "/images/Lim/poby.jpeg",
+    "commentImg": "/images/Lim/loopy.jpeg"
+  }
+]

@@ -4,9 +4,9 @@ import './Story.scss';
 function Story() {
   return (
     <div className="user">
-      <img className="userImg" src="/images/Lim/user.jpg" alt="user image" />
+      <img className="userImg" src="/images/Lim/loopy.jpeg" alt="user image" />
       <div className="userIdInfo">
-        <p className="userId">Lucas_213</p>
+        <p className="userId">loopy</p>
         <p className="userInfo">3시간 전</p>
       </div>
     </div>
