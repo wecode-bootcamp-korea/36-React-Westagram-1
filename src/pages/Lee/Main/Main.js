@@ -48,7 +48,9 @@ const Main = () => {
             <div className="new-feed middleText">새 게시물</div>
           </div>
           <div className="feedContainer">
-            <Feed data={feed} />
+            {feed.map(data => (
+              <Feed key={data.id} data={data} />
+            ))}
           </div>
 
           <div className="main-right">

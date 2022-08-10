@@ -23,6 +23,30 @@
       margin-bottom: 10px;
       border: 0.8px lightgray solid;
       border-radius: 5px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .btn {
+      width: auto;
+      height: 60px;
+      padding-left: 38%;
+      @include flexSort(center);
+      color: #0095f6;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .link {
+        color: #0095f6;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
 
     .unactiveBtn {
@@ -55,5 +79,15 @@
     position: absolute;
     bottom: -1;
     padding: 30px;
+    color: #0095f6;
+
+    .link {
+      color: #0095f6;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 }
