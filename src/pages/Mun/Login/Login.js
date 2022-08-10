@@ -12,7 +12,6 @@ function Login() {
   });
 
   function saveUserId(e) {
-    console.log(e.target);
     setuserId({ ...userId, [e.target.id]: e.target.value });
   }
 
@@ -51,7 +50,7 @@ function Login() {
         <button
           className={validation()}
           onClick={() => {
-            navigate('/main-mun');
+            navigate('./main-mun');
           }}
           disabled={btnDisabled}
         >

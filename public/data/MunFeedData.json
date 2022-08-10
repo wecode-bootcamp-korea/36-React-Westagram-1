@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "user_name": "dogLove",
+    "user_img": "./images/Mun/user1.jpg",
+    "feed_img": "./images/Mun/feedimg1.jpg",
+    "lover_name": "king_do",
+    "lover_img": "./images/Mun/loveimg1.jpg",
+    "lover_num": 136,
+    "comment": [
+      {
+        "id": 1,
+        "user_name": "dahyun",
+        "user_comment": "와~! 너무 예쁘다!!"
+      },
+      {
+        "id": 2,
+        "user_name": "nanuna33",
+        "user_comment": "어디야??"
+      },
+      {
+        "id": 3,
+        "user_name": "dal_git",
+        "user_comment": "진짜 멋있어"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "user_name": "catking",
+    "user_img": "./images/Mun/user2.jpg",
+    "feed_img": "./images/Mun/feedimg2.jpg",
+    "lover_name": "fammm",
+    "lover_img": "./images/Mun/loveimg2.jpg",
+    "lover_num": 75,
+    "comment": [
+      {
+        "id": 1,
+        "user_name": "kukuUk",
+        "user_comment": "멋진 광경인걸"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "user_name": "apple38",
+    "user_img": "./images/Mun/user3.png",
+    "feed_img": "./images/Mun/feedimg3.jpg",
+    "lover_name": "DDAABB",
+    "lover_img": "./images/Mun/loveimg3.png",
+    "lover_num": 180,
+    "comment": [
+      {
+        "id": 1,
+        "user_name": "kkkr_rk",
+        "user_comment": "밥 먹었니?"
+      },
+      {
+        "id": 2,
+        "user_name": "sky_love",
+        "user_comment": "노을이 참 예쁘다"
+      }
+    ]
+  }
+]
