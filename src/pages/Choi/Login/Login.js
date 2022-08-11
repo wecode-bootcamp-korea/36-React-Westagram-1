@@ -11,8 +11,41 @@ const Login = () => {
   const userPwSet = event => {
     setUserPwSaved(event.target.value);
   };
-
+  console.log(userIdSaved, userPwSaved);
   const inputValid = userIdSaved.includes('@') && userPwSaved.length > 5;
+
+  const fetchUserInfo = () => {
+    fetch('http://10.58.0.55:3000/auth/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: userIdSaved,
+        password: userPwSaved.toString(),
+      }),
+    })
+      .then(res => res.json())
+      .then(res => console.log(res));
+  };
+
+  const fetchUserLogin = () => {
+    fetch('http://10.58.0.55:3000/auth/signin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        password: userPwSaved.toString(),
+        email: userIdSaved,
+      }),
+    })
+      .then(res => res.json())
+      .then(result => {
+        console.log(result);
+        if (result.message === 'bool') {
+          localStorage.setItem('token', result.accessToken);
+        } else {
+          alert('아이디나 비밀번호를 확인해주세요');
+        }
+      });
+  };
 
   return (
     <body className="loginBody">
@@ -35,10 +68,12 @@ const Login = () => {
           <button
             className={inputValid ? 'btnActive' : 'btnInactive'}
             disabled={inputValid ? false : true}
+            onClick={fetchUserLogin}
           >
             로그인
           </button>
         </div>
+        <button onClick={fetchUserInfo}>회원가입</button>
         <div className="forgotPassword">비밀번호를 잊으셨나요?</div>
       </div>
     </body>
