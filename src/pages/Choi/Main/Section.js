@@ -29,6 +29,7 @@ const Section = () => {
               id={data.id}
               url={data.url}
               key={index}
+              myKey={index}
             />
           );
         })}

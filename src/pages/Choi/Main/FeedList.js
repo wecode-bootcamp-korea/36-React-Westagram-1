@@ -5,7 +5,7 @@ const FeedList = props => {
   let feedInfo = props;
 
   return (
-    <div className="feedContent" key={feedInfo.key}>
+    <div className="feedContent" key={feedInfo.myKey}>
       <div className="feeder">
         <img
           src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
