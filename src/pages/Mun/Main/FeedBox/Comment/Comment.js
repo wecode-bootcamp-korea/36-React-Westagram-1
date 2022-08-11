@@ -20,7 +20,7 @@ const Comment = ({ nickname, comment, close, idx, comments, setComments }) => {
   return (
     <div className="commentBox" key={idx}>
       <div className="comment">
-        <span className="userName">{nickname || myName}</span>
+        <span className="userName">{nickname}</span>
         {comment}
       </div>
       <div className="commentImgBox">
@@ -46,3 +46,5 @@ const Comment = ({ nickname, comment, close, idx, comments, setComments }) => {
 };
 
 export default Comment;
+
+

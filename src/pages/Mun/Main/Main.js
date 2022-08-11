@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 
 function Main() {
   const [data, setData] = useState([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     fetch('/data/MunFeedData.json', {
@@ -24,12 +25,19 @@ function Main() {
 
   return (
     <>
-      <Nav2 />
+      <Nav2 setSearch={setSearch} />
       <div className="mainContainer">
         <div>
-          {data.map(feedData => (
-            <FeedBox data={feedData} key={feedData.id} />
-          ))}
+          {data.map(feedData => {
+            if (data.some(data => data['user_name'].includes(search))) {
+              return feedData.user_name.includes(search) ? (
+                <FeedBox data={feedData} key={feedData.id} search={search} />
+              ) : null;
+            }
+            return (
+              <FeedBox data={feedData} key={feedData.id} search={search} />
+            );
+          })}
         </div>
         <aside className="asideFeed">
           <ProfileBox />
