@@ -13,11 +13,8 @@ const Section = () => {
       method: 'GET',
     })
       .then(res => res.json())
-
       .then(data => {
-        console.log(data);
         setFeedPhotos(data);
-        console.log(feedPhotos);
       });
   }, []);
 
@@ -25,7 +22,15 @@ const Section = () => {
     <section>
       <article className="feeds">
         {feedPhotos.map((data, index) => {
-          return <FeedList id={data.id} url={data.url} key={index} />;
+          return (
+            <FeedList
+              userId={userId}
+              userName={userName}
+              id={data.id}
+              url={data.url}
+              key={index}
+            />
+          );
         })}
       </article>
       <Aside mainUserId={userId} mainUserName={userName} />

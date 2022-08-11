@@ -20,7 +20,6 @@ const CommentInput = props => {
 
   const commentValid = comment.length >= 1;
   let userInfo = props;
-
   return (
     <>
       <div className="comment">

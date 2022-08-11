@@ -11,7 +11,7 @@ const Login = () => {
   const userPwSet = event => {
     setUserPwSaved(event.target.value);
   };
-  console.log(userIdSaved, userPwSaved);
+
   const inputValid = userIdSaved.includes('@') && userPwSaved.length > 5;
 
   const fetchUserInfo = () => {
@@ -22,9 +22,7 @@ const Login = () => {
         email: userIdSaved,
         password: userPwSaved.toString(),
       }),
-    })
-      .then(res => res.json())
-      .then(res => console.log(res));
+    });
   };
 
   const fetchUserLogin = () => {
@@ -38,7 +36,6 @@ const Login = () => {
     })
       .then(res => res.json())
       .then(result => {
-        console.log(result);
         if (result.message === 'bool') {
           localStorage.setItem('token', result.accessToken);
         } else {
