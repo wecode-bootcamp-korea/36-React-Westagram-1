@@ -1,0 +1,47 @@
+.navbar {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+
+  .leftLogo {
+    font-family: 'Lobster', cursive;
+    font-size: 31px;
+    margin-bottom: 5px;
+
+    .leftLogoImg {
+      height: 20px;
+      margin-right: 7px;
+    }
+  }
+
+  .navInput {
+    background-image: url(../../../../assets/Mun/search.png);
+    background-repeat: no-repeat;
+    background-position: 35%;
+    background-size: 15px;
+    background-color: #fafafa;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    border: 1.5px solid #e6e6e6;
+    border-radius: 3px;
+
+    &:focus {
+      background-image: none;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  .rigthMenu img {
+    width: 30px;
+    margin-right: 30px;
+  }
+}

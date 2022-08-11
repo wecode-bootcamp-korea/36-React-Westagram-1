@@ -1,0 +1,33 @@
+.mainContainer {
+  padding-top: 45px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: #fafafa;
+
+  .asideFeed {
+    width: 300px;
+    margin-top: 50px;
+  }
+}
+
+.commentClose {
+  height: 8px;
+  width: 8px;
+  margin-right: 6px;
+  opacity: 0.4;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.grayFont {
+  color: #9e9e9e;
+}
+
+.userName {
+  font-weight: bold;
+  padding: 1px;
+  padding-right: 4px;
+}

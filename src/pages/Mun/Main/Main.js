@@ -1,10 +1,52 @@
-import React from 'react';
+import './Main.scss';
+import Nav2 from './Nav/Nav2';
+import FeedBox from './FeedBox/FeedBox';
+import StoryBox from './StoryBox/StoryBox';
+import ProfileBox from './ProfileBox/ProfileBox';
+import RecommendBox from './RecommendBox/RecommendBox';
+import NoticeBox from './NoticeBox/NoticeBox';
+import { useState, useEffect } from 'react';
 
-const Main = () => {
+function Main() {
+  const [data, setData] = useState([]);
+  const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    fetch('/data/MunFeedData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setData(data);
+      });
+  }, []);
+
+  if (data.length === 0) return;
+
   return (
-    <div>
-      Main
-    </div>
+    <>
+      <Nav2 setSearch={setSearch} />
+      <div className="mainContainer">
+        <div>
+          {data.map(feedData => {
+            if (data.some(data => data['user_name'].includes(search))) {
+              return feedData.user_name.includes(search) ? (
+                <FeedBox data={feedData} key={feedData.id} search={search} />
+              ) : null;
+            }
+            return (
+              <FeedBox data={feedData} key={feedData.id} search={search} />
+            );
+          })}
+        </div>
+        <aside className="asideFeed">
+          <ProfileBox />
+          <StoryBox />
+          <RecommendBox />
+          <NoticeBox />
+        </aside>
+      </div>
+    </>
   );
 }
 
