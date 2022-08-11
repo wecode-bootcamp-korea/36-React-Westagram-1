@@ -1,7 +1,7 @@
 import React from 'react';
 import './nav.scss';
 
-const Nav = () => {
+const Nav = ({ checkValue, onChange }) => {
   return (
     <header className="Nav">
       <nav className="navClass">
@@ -11,7 +11,16 @@ const Nav = () => {
         </div>
 
         <div className="second__box ">
-          <input className="input1" type="text" placeholder="검색" />
+          <input
+            className="input1"
+            type="text"
+            // value={value}
+            placeholder="검색"
+            value={checkValue}
+            onChange={value => {
+              onChange(value);
+            }}
+          />
           <i className="uil uil-search input_search" />
         </div>
 

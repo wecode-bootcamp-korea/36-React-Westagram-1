@@ -4,10 +4,12 @@ import Feed from '../feed/Feed';
 import './main.scss';
 
 const Main = () => {
-  const [link, setLink] = useState([]);
-  const [story, setStory] = useState([]);
-  const [feed, setFeed] = useState([]);
-  const [profile, setProfile] = useState([]);
+  const [links, setLink] = useState([]);
+  const [stories, setStory] = useState([]);
+  const [feeds, setFeed] = useState([]);
+  const [profiles, setProfile] = useState([]);
+  const [checkValue, setCheckValue] = useState('');
+  const [copyLists, setCopyList] = useState([]);
 
   useEffect(() => {
     fetch('/data/data.json')
@@ -33,24 +35,50 @@ const Main = () => {
       .then(result => setFeed(result));
   }, []);
 
+  useEffect(() => {
+    fetch('/data/feed.json')
+      .then(response => response.json())
+      .then(result => setFeed(result));
+  }, []);
+
+  useEffect(() => {
+    let copy = [...feeds];
+    setCopyList(
+      copy.filter(
+        data => data.name === checkValue || data.name.includes(checkValue)
+      )
+    );
+  }, [checkValue]);
+
+  const onChangeHandler = e => {
+    e.preventDefault();
+    setCheckValue(e.target.value);
+  };
+
   return (
     <div className="main">
-      <Nav />
+      <Nav Feed={feeds} checkValue={checkValue} onChange={onChangeHandler} />
       <div className="container">
         <main>
           <div className="feeds__stories">
-            {story.map(item => (
-              <div key={item.id} className="feeds__story">
-                <img className="img__round-big" src={item.src} alt={item.alt} />
-                <div className="smallText">{item.name}</div>
+            {stories.map(story => (
+              <div key={story.id} className="feeds__story">
+                <img
+                  className="img__round-big"
+                  src={story.src}
+                  alt={story.alt}
+                />
+                <div className="smallText">{story.name}</div>
               </div>
             ))}
             <div className="new-feed middleText">새 게시물</div>
           </div>
           <div className="feedContainer">
-            {feed.map(data => (
-              <Feed key={data.id} data={data} />
-            ))}
+            {copyLists.length > 0
+              ? copyLists.map(copyList => (
+                  <Feed key={copyList.id} data={copyList} />
+                ))
+              : feeds.map(feed => <Feed key={feed.id} data={feed} />)}
           </div>
 
           <div className="main-right">
@@ -73,31 +101,31 @@ const Main = () => {
               <div className="middleText">모두 보기</div>
             </div>
             <div className="story">
-              {profile.map(info => (
-                <div key={info.id} className="story__profile">
+              {profiles.map(profile => (
+                <div key={profile.id} className="story__profile">
                   <img
                     className="img__round-small"
-                    src={info.src}
-                    alt={info.alt}
+                    src={profile.src}
+                    alt={profile.alt}
                   />
                   <div className="profile__text">
-                    <h4>{info.name}</h4>
-                    <div className="smallText">{info.feature}</div>
+                    <h4>{profile.name}</h4>
+                    <div className="smallText">{profile.feature}</div>
                   </div>
                   <div className="transition smallerText">팔로우</div>
                 </div>
               ))}
             </div>
             <div className="recommendation middleText">
-              {link.map(info1 => (
-                <div key={info1.id}>
+              {links.map(link => (
+                <div key={link.id}>
                   <span>
                     <a
                       href="https://www.instagram.com/"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      {info1.name}
+                      {link.name}
                     </a>
                   </span>
                   <span>.</span>

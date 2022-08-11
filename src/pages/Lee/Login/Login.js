@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
 import './login.scss';
 
 const Login = () => {
-  const [info, setInfo] = useState({
+  const [infos, setInfo] = useState({
     userEmail: '',
     userPassword: '',
   });
   const [isActive, setIsActive] = useState(false);
 
   const isPassedLogin = () => {
-    return info.userEmail.includes('@') && info.userPassword.length > 4
+    return infos.userEmail.includes('@') && infos.userPassword.length > 4
       ? setIsActive(true)
       : setIsActive(false);
   };
@@ -22,7 +21,7 @@ const Login = () => {
     const ID = e.target.id;
     // const {value,id} = e.target
     setInfo({
-      ...info,
+      ...infos,
       [ID]: value,
     });
   };
@@ -35,8 +34,8 @@ const Login = () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        id: info.userEmail,
-        password: info.userPassword,
+        id: infos.userEmail,
+        password: infos.userPassword,
       }),
     })
       .then(response => {
@@ -59,7 +58,7 @@ const Login = () => {
           <label>Email</label>
           <input
             className="inputClass"
-            value={info.userEmail}
+            value={infos.userEmail}
             type="email"
             name="userEmail"
             id="userEmail"
@@ -71,7 +70,7 @@ const Login = () => {
           <input
             className="inputClass"
             id="userPassword"
-            value={info.userPassword}
+            value={infos.userPassword}
             type="userPassword"
             name="userPassword"
             s
@@ -85,7 +84,7 @@ const Login = () => {
             onClick={request}
             type="submit"
             disabled={
-              info.userEmail.includes('@') && info.userPassword.length > 4
+              infos.userEmail.includes('@') && infos.userPassword.length > 4
                 ? false
                 : true
             }
