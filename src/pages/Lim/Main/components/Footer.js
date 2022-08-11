@@ -8,7 +8,7 @@ function Footer() {
     <footer>
       {FOOTER_INFO.map(info => {
         return (
-          <li key={info.id}>
+          <li key={info.content}>
             <Link to={info.url}>{info.content}</Link>
           </li>
         );

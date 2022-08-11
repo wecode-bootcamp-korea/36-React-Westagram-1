@@ -24,12 +24,7 @@ const Main = () => {
             return (
               <Article
                 key={feedInfo.id}
-                name={feedInfo.name}
-                text={feedInfo.text}
-                likeNum={feedInfo.likeNum}
-                feedImg={feedInfo.feedImg}
-                profileImg={feedInfo.profileImg}
-                commentImg={feedInfo.commentImg}
+                {...feedInfo}
               />
             );
           })}
