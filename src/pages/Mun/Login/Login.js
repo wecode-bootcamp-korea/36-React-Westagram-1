@@ -1,11 +1,14 @@
-import './Login.scss';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Login.scss';
 
 function Login() {
   const navigate = useNavigate();
-  let btnDisabled = true;
+  // Review: 동작 안함
+  // Review: 변수명
+  const isUserInputValid = userId['id'].includes('@') && userId['password'].length > 4
 
+  // Review: camelCase
   const [userId, setuserId] = useState({
     id: '',
     password: '',
@@ -15,15 +18,9 @@ function Login() {
     setuserId({ ...userId, [e.target.id]: e.target.value });
   }
 
-  function validation() {
-    if (userId['id'].includes('@') && userId['password'].length > 4) {
-      btnDisabled = false;
-      return 'loginButtonActive';
-    } else {
-      btnDisabled = true;
-      return 'loginButton';
-    }
-  }
+  // Review: 함수의 기능이 중첩되어 있음
+  // Btn Disabled
+  // loginButtonClassName
 
   return (
     <div className="loginContainer">
@@ -36,6 +33,7 @@ function Login() {
             }}
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
+            // Review: ID Selector
             id="id"
           />
           <input
@@ -48,11 +46,11 @@ function Login() {
           />
         </div>
         <button
-          className={validation()}
+          className={isUserInputValid ? "loginButtonActive" : "loginButton"}
           onClick={() => {
             navigate('/main-mun');
           }}
-          disabled={btnDisabled}
+          disabled={!isUserInputValid}
         >
           로그인
         </button>

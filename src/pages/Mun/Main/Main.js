@@ -8,16 +8,18 @@ import NoticeBox from './NoticeBox/NoticeBox';
 import { useState, useEffect } from 'react';
 
 function Main() {
-  const [data, setData] = useState([]);
+  // Review: 변수명
+  // data, info
+  // array, string, object
+  const [data, setData] = useState([])
 
   useEffect(() => {
     fetch('/data/MunFeedData.json', {
       method: 'GET',
     })
       .then(res => res.json())
-      .then(data => {
-        setData(data);
-      });
+      .then(setData)
+    // Review: setData
   }, []);
 
   if (data.length === 0) return;
@@ -27,8 +29,8 @@ function Main() {
       <Nav2 />
       <div className="mainContainer">
         <div>
-          {data.map(feedData => (
-            <FeedBox data={feedData} key={feedData.id} />
+          {feeds.map(feed => (
+            <FeedBox data={feed} key={feed.id} />
           ))}
         </div>
         <aside className="asideFeed">

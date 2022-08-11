@@ -2,6 +2,7 @@ import React from 'react';
 import './StoryBox.scss';
 
 const StoryBox = () => {
+  // Review: 반복되는 데이터
   return (
     <div className="storyBox">
       <div className="asideBoxTop">

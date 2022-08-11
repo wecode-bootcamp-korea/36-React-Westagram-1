@@ -2,12 +2,14 @@ import React from 'react';
 import Comment from './Comment/Comment';
 import { useState } from 'react';
 import './FeedBox.scss';
+
 const FeedBox = ({ data }) => {
-  const myName = 'nyam_nyam2';
+  const {user_img, user_name} = data
 
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
 
+  // Review: 함수명
   function btnStyle() {
     return comment.length > 0 ? 'commentButtonAct' : 'commentButton';
   }
@@ -18,10 +20,10 @@ const FeedBox = ({ data }) => {
 
   function commentPlus(e) {
     e.preventDefault();
+
     if (comment === '') return;
-    let tmp = [...comments];
-    tmp.push(comment);
-    setComments(tmp);
+
+    setComments([...comments, comment]);
     setComment('');
   }
 
@@ -29,6 +31,7 @@ const FeedBox = ({ data }) => {
     <section className="feedBox">
       <div className="feedTop">
         <div className="feedTopLeft">
+          {/* Review: 구조분해할당 */}
           <img src={data.user_img} alt="tmp" />
           {data.user_name}
         </div>
@@ -70,6 +73,7 @@ const FeedBox = ({ data }) => {
             );
           })}
 
+          {/* Review: index를 key로 사용하면 안되는 이유 */}
           {comments.map((comment, idx) => {
             return (
               <Comment
@@ -87,9 +91,8 @@ const FeedBox = ({ data }) => {
         <div className="commentTime">42분 전</div>
         <form className="commentInputBox">
           <input
-            onChange={e => {
-              commentChange(e);
-            }}
+            // Review: 불필요한 함수 선언
+            onChange={commentChange}
             value={comment}
             type="text"
             placeholder="댓글 달기..."
@@ -110,3 +113,5 @@ const FeedBox = ({ data }) => {
 };
 
 export default FeedBox;
+
+const MY_NAME = 'nyam_nyam2';
