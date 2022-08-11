@@ -7,26 +7,26 @@ const Signup = () => {
     userPassword: '',
   });
 
-  // const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const changeHandler = e => {
     e.preventDefault();
     const { name, value } = e.target;
     setInput({ ...input, [name]: value });
   };
-  // const isPassedLogin = () => {
-  //   return input.userEmail.length > 5 && input.userPassword.length > 5
-  //     ? setIsActive(true)
-  //     : setIsActive(false);
-  // };
+  const isPassedLogin = () => {
+    return input.userEmail.length > 5 && input.userPassword.length > 5
+      ? setIsActive(true)
+      : setIsActive(false);
+  };
 
   const request = e => {
     e.preventDefault();
-    fetch('http://10.58.4.94:3000/auth/signup', {
+    fetch('https://westagram-signup.herokuapp.com/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        email: input.userEmail,
+        id: input.userEmail,
         password: input.userPassword,
       }),
     })
@@ -57,6 +57,7 @@ const Signup = () => {
             id="user"
             value={input.userEmail}
             onChange={changeHandler}
+            onKeyUp={isPassedLogin}
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <label>Password</label>
@@ -67,30 +68,20 @@ const Signup = () => {
             name="userPassword"
             value={input.userPassword}
             onChange={changeHandler}
+            onKeyUp={isPassedLogin}
             placeholder="비밀번호"
             required
           />
           <label>check Password</label>
-          {/* <input
-            className="inputClass"
-            id="rePassword"
-            type="reUserPassword"
-            name="reUserPassword"
-            value={input.reUserPassword}
-            onChange={changeHandler}
-            onKeyUp={isPassedLogin}
-            placeholder="비밀번호 확인"
-            required
-          /> */}
           <button
             type="submit"
-            className="activeBtn"
+            className={isActive ? 'activeBtn' : 'unactiveBtn'}
             onClick={request}
-            // disabled={
-            //   input.userEmail.length > 5 && input.userPassword.length > 5
-            //     ? false
-            //     : true
-            // }
+            disabled={
+              input.userEmail.length > 5 && input.userPassword.length > 5
+                ? false
+                : true
+            }
           >
             회원가입 신청
           </button>

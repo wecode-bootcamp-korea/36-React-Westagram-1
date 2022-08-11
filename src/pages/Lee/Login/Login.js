@@ -8,13 +8,13 @@ const Login = () => {
     userEmail: '',
     userPassword: '',
   });
-  // const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
-  // const isPassedLogin = () => {
-  //   return info.userEmail.includes('@') && info.userPassword.length > 4
-  //     ? setIsActive(true)
-  //     : setIsActive(false);
-  // };
+  const isPassedLogin = () => {
+    return info.userEmail.includes('@') && info.userPassword.length > 4
+      ? setIsActive(true)
+      : setIsActive(false);
+  };
 
   const saveUserId = e => {
     e.preventDefault();
@@ -29,18 +29,13 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  // const goToMain = () => {
-  //   navigate('/main-lee');
-  // };
-  //함수형에서는 this 바인딩 쓰기 하는데 호출시 this형식으로 부르지 않는다? -> let's figure it out.
-
   const request = e => {
     e.preventDefault();
-    fetch('http://10.58.0.32:3000/users/signin', {
+    fetch('https://westagram-signup.herokuapp.com/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        email: info.userEmail,
+        id: info.userEmail,
         password: info.userPassword,
       }),
     })
@@ -52,6 +47,7 @@ const Login = () => {
       });
     if (localStorage.acesstoken) {
       navigate('/main-lee');
+      alert(`주영님 로그인에 성공하셨습니다.`);
     }
   };
 
@@ -69,7 +65,7 @@ const Login = () => {
             id="userEmail"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             onChange={saveUserId}
-            // onKeyUp={isPassedLogin}
+            onKeyUp={isPassedLogin}
           />
           <label>Password</label>
           <input
@@ -82,17 +78,17 @@ const Login = () => {
             placeholder="비밀번호"
             required
             onChange={saveUserId}
-            // onKeyUp={isPassedLogin}
+            onKeyUp={isPassedLogin}
           />
           <input
-            className="activeBtn"
+            className={isActive ? 'activeBtn' : 'unactiveBtn'}
             onClick={request}
             type="submit"
-            // disabled={
-            //   info.userEmail.includes('@') && info.userPassword.length > 4
-            //     ? false
-            //     : true
-            // }
+            disabled={
+              info.userEmail.includes('@') && info.userPassword.length > 4
+                ? false
+                : true
+            }
             value="로그인"
           />
 
