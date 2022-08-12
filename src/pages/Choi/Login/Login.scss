@@ -1,0 +1,64 @@
+.loginBody {
+  text-align: center;
+  position: fixed;
+  top: 30%;
+
+  .objectTranslate {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    border: 1px solid #dbdbdb;
+    padding: 30px 30px 15px 30px;
+
+    header {
+      width: 180px;
+      /* font-family: "billabong", sans-serif; */
+      font-family: 'Lobster', cursive;
+      font-size: 40px;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+      margin-bottom: 30px;
+    }
+
+    .login {
+      display: flex;
+      flex-direction: column;
+      width: 288px;
+
+      .userName,
+      .passwordInput {
+        height: 36px;
+        margin-bottom: 5px;
+        background-color: #fafafa;
+        border: 1px solid #dbdbdb;
+        text-indent: 5px;
+        border-radius: 3px;
+      }
+
+      button {
+        height: 30px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        color: white;
+        font-weight: 800;
+        border: none;
+        border-radius: 3px;
+      }
+
+      .btnActive {
+        background-color: blue;
+      }
+
+      .btnInactive {
+        background-color: #b5dcf7;
+      }
+    }
+
+    .forgotPassword {
+      margin-top: 80px;
+      font-size: 12px;
+      color: #557498;
+    }
+  }
+}

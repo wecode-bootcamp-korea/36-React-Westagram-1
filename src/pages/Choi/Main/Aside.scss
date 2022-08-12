@@ -1,0 +1,117 @@
+.main-right {
+  margin-right: 15%;
+
+  .user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 94%;
+    height: 56px;
+    border-bottom: none;
+    border-radius: 5px;
+    padding-left: 20px;
+
+    .userPicAndId {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 40px;
+        border: 1px solid #dbdbdb;
+        border-radius: 50%;
+        padding: 5px;
+        margin-top: 5px;
+        background-color: #fafafa;
+      }
+
+      div {
+        margin-left: 10px;
+
+        .useId {
+          font-weight: 800;
+          margin-bottom: 3px;
+        }
+      }
+    }
+    .changeAccount {
+      font-size: 12px;
+      font-weight: 600;
+      color: #299ef7;
+    }
+  }
+
+  .userList {
+    padding-left: 5px;
+    margin: 10px 0 0 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    background-color: white;
+
+    .friendListTitle {
+      display: flex;
+      justify-content: space-between;
+
+      p {
+        padding-right: 5%;
+        padding-top: 1%;
+      }
+
+      .expandList {
+        font-size: 12px;
+        color: #299ef7;
+      }
+    }
+
+    p {
+      margin-left: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    ul li {
+      margin-left: 20px;
+    }
+
+    ul {
+      padding-bottom: 10px;
+
+      .friendUser1 {
+        display: flex;
+        align-items: center;
+        margin: 1px 0 1px 20px;
+
+        img {
+          width: 20px;
+          border: 1px solid #dbdbdb;
+          border-radius: 50%;
+          padding: 5px;
+          margin-top: 5px;
+          background-color: #fafafa;
+        }
+      }
+    }
+  }
+  .linkMenu {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0 0 10px;
+    padding: 3px 0px 3px 3px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    font-size: 10px;
+
+    li {
+      .menuName {
+        text-decoration: none;
+        color: black;
+      }
+
+      &:last-child {
+        span {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}
