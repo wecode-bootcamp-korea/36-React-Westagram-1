@@ -9,7 +9,6 @@ const Main = () => {
   const [feeds, setFeed] = useState([]);
   const [profiles, setProfile] = useState([]);
   const [checkValue, setCheckValue] = useState('');
-  const [copyLists, setCopyList] = useState([]);
 
   useEffect(() => {
     fetch('/data/data.json')
@@ -41,14 +40,14 @@ const Main = () => {
       .then(result => setFeed(result));
   }, []);
 
-  useEffect(() => {
-    let copy = [...feeds];
-    setCopyList(
-      copy.filter(
-        data => data.name === checkValue || data.name.includes(checkValue)
-      )
+  const searchFilter = () => {
+    const filtered = feeds.filter(
+      item =>
+        checkValue.length >= 2 &&
+        (item.name === checkValue || item.name.includes(checkValue))
     );
-  }, [checkValue]);
+    return filtered.length > 0 ? filtered : feeds;
+  };
 
   const onChangeHandler = e => {
     e.preventDefault();
@@ -74,11 +73,9 @@ const Main = () => {
             <div className="new-feed middleText">새 게시물</div>
           </div>
           <div className="feedContainer">
-            {copyLists.length > 0
-              ? copyLists.map(copyList => (
-                  <Feed key={copyList.id} data={copyList} />
-                ))
-              : feeds.map(feed => <Feed key={feed.id} data={feed} />)}
+            {searchFilter().map(item => (
+              <Feed key={item.id} data={item} />
+            ))}
           </div>
 
           <div className="main-right">
@@ -144,3 +141,10 @@ const Main = () => {
 };
 
 export default Main;
+
+// return (
+//   <div className="mainApp">
+//     <Nav setCheckSearch={setCheckSearch} />
+//     <MainContainer postData={searchFilter()} />
+//   </div>
+// );
