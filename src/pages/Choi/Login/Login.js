@@ -2,25 +2,24 @@ import React, { useState } from 'react';
 import './Login.scss';
 
 const Login = () => {
-  let [userIdSaved, setUserIdSaved] = useState('');
-  let [userPwSaved, setUserPwSaved] = useState('');
-  const userIdSet = event => {
-    return setUserIdSaved(event.target.value);
+  const [user, setUser] = useState({
+    userId: '',
+    userPw: '',
+  });
+
+  const saveUser = e => {
+    setUser({ ...user, [e.target.id]: e.target.value });
   };
 
-  const userPwSet = event => {
-    setUserPwSaved(event.target.value);
-  };
-
-  const inputValid = userIdSaved.includes('@') && userPwSaved.length > 5;
+  const isUserInputValid = user.userId.includes('@') && user.userPw.length > 5;
 
   const fetchUserInfo = () => {
     fetch('http://10.58.0.55:3000/auth/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        email: userIdSaved,
-        password: userPwSaved.toString(),
+        email: user.userId,
+        password: user.userPw.toString(),
       }),
     });
   };
@@ -30,8 +29,8 @@ const Login = () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        password: userPwSaved.toString(),
-        email: userIdSaved,
+        password: user.userPw.toString(),
+        email: user.userId,
       }),
     })
       .then(res => res.json())
@@ -45,7 +44,7 @@ const Login = () => {
   };
 
   return (
-    <body className="loginBody">
+    <div className="loginBody">
       <div className="objectTranslate">
         <header>Westagram</header>
         <div className="login">
@@ -53,18 +52,20 @@ const Login = () => {
             className="userName"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
-            onChange={userIdSet}
+            onChange={saveUser}
+            id="userId"
           />
           <input
             className="passwordInput"
             type="password"
             placeholder="비밀번호"
-            onChange={userPwSet}
+            id="userPw"
+            onChange={saveUser}
           />
 
           <button
-            className={inputValid ? 'btnActive' : 'btnInactive'}
-            disabled={inputValid ? false : true}
+            className={isUserInputValid ? 'btnActive' : 'btnInactive'}
+            disabled={!isUserInputValid}
             onClick={fetchUserLogin}
           >
             로그인
@@ -73,7 +74,7 @@ const Login = () => {
         <button onClick={fetchUserInfo}>회원가입</button>
         <div className="forgotPassword">비밀번호를 잊으셨나요?</div>
       </div>
-    </body>
+    </div>
   );
 };
 

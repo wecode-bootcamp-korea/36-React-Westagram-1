@@ -7,7 +7,13 @@ const Nav = () => {
       <ul className="topLayerFeatures">
         <li className="title">Westagram</li>
         <li className="nav2">
-          <input className="search" type="text" placeholder="검색" />
+          <input
+            className="search"
+            type="text"
+            placeholder="검색"
+            // onChange={searchLoader}
+            // value={search}
+          />
         </li>
         <li className="nav3">
           <img

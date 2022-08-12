@@ -1,11 +1,10 @@
 import React from 'react';
 import './CommentList.scss';
 
-const CommentList = props => {
-  let userInfo = props;
+const CommentList = ({ listNumber, comment, userMainId }) => {
   return (
-    <p key={userInfo.listNumber}>
-      <span>{userInfo.userMainId}</span>&nbsp;{userInfo.comment}
+    <p key={listNumber}>
+      <span>{userMainId}</span>&nbsp;{comment}
     </p>
   );
 };

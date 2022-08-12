@@ -1,20 +1,18 @@
 import React from 'react';
 import CommentInput from './CommentInput';
 
-const FeedList = props => {
-  let feedInfo = props;
-
+const FeedList = ({ userId, userName, id, url }) => {
   return (
-    <div className="feedContent" key={feedInfo.myKey}>
+    <div className="feedContent" key={id}>
       <div className="feeder">
         <img
           src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
           alt="user"
         />
-        <p>{feedInfo.id}</p>
+        <p>{id}</p>
       </div>
       <div className="feedImage">
-        <img src={feedInfo.url} alt="feedImage" />
+        <img src={url} alt="feedImage" />
       </div>
       <div className="feedBottom">
         <div className="iconList">
@@ -48,10 +46,7 @@ const FeedList = props => {
             <span>peter_sparrow</span>외 100명이 좋아합니다
           </p>
         </div>
-        <CommentInput
-          mainUserId={feedInfo.userId}
-          mainUserName={feedInfo.userName}
-        />
+        <CommentInput mainUserId={userId} mainUserName={userName} />
       </div>
     </div>
   );

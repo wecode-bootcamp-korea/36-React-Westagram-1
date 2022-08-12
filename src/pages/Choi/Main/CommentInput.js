@@ -2,34 +2,43 @@ import React, { useState } from 'react';
 import CommentList from './CommentList';
 import './CommentInput.scss';
 
-const CommentInput = props => {
-  const [comment, setComment] = useState('');
+const CommentInput = ({ mainUserId }) => {
+  const [comment, setComment] = useState({
+    commentText: '',
+    commentId: 0,
+  });
 
-  const commentInput = event => setComment(event.target.value);
-
-  const [commentArray, setCommentArray] = useState([]);
-
-  const registComment = event => {
-    event.preventDefault();
-    if (comment === '') {
-      return;
-    }
-    setCommentArray([...commentArray, comment]);
-    setComment('');
+  let commentIdCount = 0;
+  const saveComment = event => {
+    setComment({
+      commentText: event.target.value,
+      commentId: commentIdCount,
+    });
   };
 
-  const commentValid = comment.length >= 1;
-  let userInfo = props;
+  const [comments, setComments] = useState([]);
+
+  const registerComment = event => {
+    event.preventDefault();
+
+    if (comment.commentText === '') return;
+
+    setComments([...comments, comment]);
+    setComment({ commentText: '', commentId: 0 });
+    commentIdCount++;
+  };
+
+  const isCommentValid = comment.commentText.length >= 1;
   return (
-    <>
+    <div className="commentInput">
       <div className="comment">
-        {commentArray.map((comment, index) => {
+        {comments.map(comment => {
           return (
             <CommentList
-              key={index}
-              comment={comment}
-              listNumber={index}
-              userMainId={userInfo.mainUserId}
+              key={comment.commentIdCount}
+              comment={comment.commentText}
+              listNumber={comment.commentIdCount}
+              userMainId={mainUserId}
             />
           );
         })}
@@ -41,19 +50,19 @@ const CommentInput = props => {
           className="commentInput"
           type="text"
           placeholder="댓글을 달아보아요"
-          value={comment}
-          onChange={commentInput}
+          value={comment.commentText}
+          onChange={saveComment}
         />
         <button
           type="submit"
-          className={commentValid ? 'btnActive' : 'btnInactive'}
-          onClick={registComment}
-          disabled={commentValid ? false : true}
+          className={isCommentValid ? 'btnActive' : 'btnInactive'}
+          onClick={registerComment}
+          disabled={!isCommentValid}
         >
           게시
         </button>
       </form>
-    </>
+    </div>
   );
 };
 
