@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+/* basic css */
+
+.signup {
+  width: 33vw;
+  height: 400px;
+  border: 0.5px lightgrey solid;
+  position: absolute;
+  left: 32vw;
+  top: 150px;
+  h1 {
+    .text-h4 {
+      font-size: 15px;
+      margin-top: 10px;
+    }
+  }
+  form {
+    width: 100%;
+
+    input {
+      width: 70%;
+      height: 35px;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      border: 0.8px lightgray solid;
+      border-radius: 5px;
+      text-align: center;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .btn {
+      width: auto;
+      padding-left: 44%;
+      height: 60px;
+      @include flexSort(center);
+      color: #0095f6;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .link {
+        color: #0095f6;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .unactiveBtn {
+      @include btn;
+      background-color: #b2dffc;
+      color: #fff;
+      @include flexSort(center);
+    }
+
+    .activeBtn {
+      @include btn;
+      background-color: #0095f6;
+      color: #fff;
+      @include flexSort(center);
+      &:hover {
+        cursor: pointer;
+        transform: translateX(1px);
+      }
+    }
+
+    label {
+      display: none;
+    }
+  }
+
+  h1 {
+    font-family: $headFont;
+    text-align: center;
+    margin: 40px 0;
+    font-size: 2.6rem;
+  }
+
+  footer {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: -1;
+    padding: 30px;
+    color: #0095f6;
+
+    .link {
+      color: #0095f6;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

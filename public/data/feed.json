@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "src": "images/Lee/프3.jpeg",
+    "alt": "profilePicture",
+    "name": "leejuyoung",
+    "subName": "오늘은 여기까지1",
+    "feature": "deanthony_hatter님이 팔로우합니다.",
+    "articleSrc": "images/Lee/피드.jpg",
+    "articleAlt": "big-picture",
+    "reply": "피드 게시 글 1",
+    "heart": "2312414명"
+  },
+  {
+    "id": 2,
+    "src": "images/Lee/프3.jpeg",
+    "alt": "profilePicture",
+    "name": "leejuyoung",
+    "subName": "오늘은 여기까지2",
+    "feature": "we_are_code님 외 1명이 팔로우합니다",
+    "articleSrc": "images/Lee/피드5.webp",
+    "articleAlt": "big-picture",
+    "saying": "피드 게시 글 2!",
+    "heart": "414212명"
+  },
+  {
+    "id": 3,
+    "src": "images/Lee/프3.jpeg",
+    "alt": "profilePicture",
+    "name": "leejuyoung",
+    "subName": "오늘은 여기까지3",
+    "feature": "Instagram 신규 가입",
+    "articleSrc": "images/Lee/피드4.webp",
+    "articleAlt": "big-picture",
+    "saying": "피드 게시 글 3!",
+    "heart": "22343명"
+  },
+  {
+    "id": 4,
+    "src": "images/Lee/프3.jpeg",
+    "alt": "profilePicture",
+    "name": "parkjuyoung",
+    "subName": "오늘은 여기까지4",
+    "feature": "Instagram 신규 가입",
+    "articleSrc": "images/Lee/피드 3.webp",
+    "articleAlt": "big-picture",
+    "saying": "피드 게시 글 4!",
+    "heart": "10023명"
+  },
+  {
+    "id": 5,
+    "src": "images/Lee/프3.jpeg",
+    "alt": "profilePicture",
+    "name": "parkjuyoung",
+    "subName": "오늘은 여기까지5",
+    "articleSrc": "images/Lee/피드 2.webp",
+    "articleAlt": "big-picture",
+    "saying": "피드 게시 글 5",
+    "heart": "9명"
+  },
+  {
+    "id": 6,
+    "src": "images/Lee/프3.jpeg",
+    "alt": "profilePicture",
+    "name": "limjuyoung",
+    "subName": "오늘은 여기까지3",
+    "feature": "Instagram 신규 가입",
+    "articleSrc": "images/Lee/피드 1.jpeg",
+    "articleAlt": "big-picture",
+    "saying": "피드 게시 글 3!",
+    "heart": "22343명"
+  }
+]

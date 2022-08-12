@@ -1,0 +1,34 @@
+@mixin flexSort($justify, $alignItems: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+
+// every texts 2
+@mixin globalTexts($size, $color, $textCenter) {
+  font-size: $size;
+  margin-left: 5px;
+  font-weight: 500;
+  color: $color;
+  text-align: $textCenter;
+}
+
+//every images 3
+@mixin globalimages($imagePh: 'auto') {
+  max-width: 100%;
+  margin-bottom: 4px;
+  height: $imagePh;
+  border-radius: 50%;
+}
+
+@mixin btn() {
+  width: 50%;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 5px;
+  background-color: #1c7ed6;
+  border-radius: 5px;
+  color: aliceblue;
+}

@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+//flex box 1
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.icon-absolute {
+  position: absolute;
+  right: 0;
+}
+
+body {
+  height: 100vh;
+  margin: 10px auto;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+/* 아이콘 사이즈 통일 class 명인 icon을 i의 클래스로 추가해주면서 사이즈 동일하게 한다. */
+
+//1. navClass
+
+/* main */
+.container {
+  background-color: #fafafa;
+
+  main {
+    width: 50vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.6fr 1.2fr;
+    grid-template-rows: 60px;
+    grid-auto-flow: column;
+
+    .feeds__stories {
+      grid-row: 1/3;
+      margin-top: 20px;
+      padding: 10px;
+      @include flexSort(center);
+      @include globalTexts($size, black, $textCenter);
+      position: relative;
+      border: 1px solid #dbdbdb;
+      border-radius: 6px;
+
+      .feeds__story {
+        margin: 0px 20px 10px 0px;
+        width: 50px;
+        height: 50px;
+
+        .img__round-big {
+          @include globalimages();
+          border: 1px palevioletred solid;
+        }
+      }
+
+      .new-feed {
+        position: absolute;
+        top: -15px;
+        right: 20px;
+        background-color: white;
+        padding: 8px 8px;
+        border-radius: 10px;
+        box-shadow: 0.5px 0.5px 0.5px 0.5px gray;
+        font-weight: 500;
+      }
+    }
+
+    .feedContainer {
+      grid-row: 3 / auto;
+      margin-top: 20px;
+      border-radius: 6px;
+      height: auto;
+    }
+  }
+}
+
+.main-right {
+  padding-left: 20px;
+  grid-column: 2/3;
+
+  .profile {
+    @include flexSort(flex-start);
+    margin-top: 30px;
+    height: 60px;
+
+    .img__round-medium {
+      @include globalimages(50px);
+      border: 1px solid #8e8e8e;
+    }
+    .transition {
+      position: absolute;
+      right: 25%;
+      @include globalTexts(smaller, #6fbbf7, left);
+    }
+
+    .profile__text {
+      .middleText {
+        @include globalTexts($size, black, left);
+      }
+
+      .smallText {
+        @include globalTexts($size, $color, left);
+      }
+    }
+  }
+
+  .story__names {
+    width: 100%;
+    margin: 10px;
+    @include flexSort(space-between);
+
+    .middleText {
+      @include globalTexts(12px, black, left);
+      font-weight: 900;
+      position: absolute;
+      right: 20%;
+    }
+
+    .smallText {
+      @include globalTexts($size, $color, left);
+      font-weight: 900;
+    }
+  }
+
+  .story {
+    width: 100%;
+    height: 240px;
+
+    .story__profile {
+      @include flexSort(flex-start);
+      width: 100%;
+      height: 40px;
+
+      .img__round-small {
+        @include globalimages(30px);
+      }
+
+      .profile__text {
+        h4 {
+          @include globalTexts($size, black, left);
+          font-size: small;
+          font-weight: 900;
+        }
+
+        .smallText {
+          @include globalTexts($size, $color, left);
+        }
+      }
+      .transition {
+        position: absolute;
+        right: 20%;
+        @include globalTexts(smaller, #6fbbf7, center);
+        font-weight: 700;
+      }
+    }
+  }
+
+  .recommendation {
+    width: 100%;
+    height: 240px;
+    color: #d4d4d4;
+    @include globalTexts($size, $color, left);
+    div {
+      display: inline;
+      span {
+        margin: 2px;
+        a {
+          text-decoration: none;
+          color: #8e8e8e;
+
+          &:hover {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}

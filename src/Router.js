@@ -8,6 +8,7 @@ import LoginMun from './pages/Mun/Login/Login';
 import LoginLim from './pages/Lim/Login/Login';
 import LoginLee from './pages/Lee/Login/Login';
 import LoginChoi from './pages/Choi/Login/Login';
+import Signup from './pages/Lee/Signup/Signup';
 
 const Router = () => {
   return (
@@ -22,6 +23,8 @@ const Router = () => {
         <Route path="/main-lee" element={<MainLee />} />
         <Route path="/main-lim" element={<MainLim />} />
         <Route path="/main-mun" element={<MainMun />} />
+
+        <Route path="/signup-lee" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   );
